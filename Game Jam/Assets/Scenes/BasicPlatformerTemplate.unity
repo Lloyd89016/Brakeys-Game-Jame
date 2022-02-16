@@ -216,7 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441880283}
   - component: {fileID: 441880282}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 1240467837}
   - component: {fileID: 1240467836}
   - component: {fileID: 1240467835}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1093,6 +1093,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04b9de7a97dafe4dac486396a454b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  isPlatformer: 1
+  isPlatformer_jumpRadius: 5
   useRoughMovements: 0
   speed: 5
   UsePhysics: 1
