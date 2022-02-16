@@ -10,18 +10,12 @@ public class MainMenuScript : MonoBehaviour
 
     private void Start()
     {
-        //destroys the pause menu when the main menu loads so it can be reloaded when the play button is pressed
+        //destroys the pause menu when the main menu loads
         Destroy(GameObject.Find("PauseMenuUI(Clone)"));
     }
 
     public void playButton()
     {
-        //Loads the pause menu when the play button is pressed
-        if (!GameObject.Find("PauseMenuUI(Clone)"))
-        {
-            Instantiate(pauseMenu);
-        }
-
         //loads the next scene in the build index when the play button is pressed
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
