@@ -11,7 +11,11 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Start()
     {
+        //sets the pause menu game object to the pause menu canvas
         pauseMenu = GameObject.Find("PauseMenuCanvas");
+
+        //makes it so the pause menu dosent destroy when the scene changes
+        DontDestroyOnLoad(GameObject.Find("PauseMenuUI(Clone)"));
     }
 
     public void Update()
@@ -57,7 +61,6 @@ public class PauseMenuScript : MonoBehaviour
     }
 
     //Conrols Buttons
-
     public void resumeButton()
     {
         isPaused = false;

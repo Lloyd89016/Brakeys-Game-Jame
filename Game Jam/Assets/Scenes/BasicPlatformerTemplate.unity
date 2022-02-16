@@ -962,6 +962,7 @@ GameObject:
   - component: {fileID: 1591551415}
   - component: {fileID: 1591551414}
   - component: {fileID: 1591551418}
+  - component: {fileID: 1591551419}
   m_Layer: 0
   m_Name: BasicPlayer
   m_TagString: Untagged
@@ -1015,7 +1016,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1591551416
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1100,4 +1101,16 @@ MonoBehaviour:
   isPlatformer_jumpRadius: 5
   useRoughMovements: 0
   speed: 5
-  UsePhysics: 1
+--- !u!114 &1591551419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591551413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e02c396c5f86f40845b298996f44bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
