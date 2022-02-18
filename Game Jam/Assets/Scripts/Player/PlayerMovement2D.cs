@@ -19,6 +19,8 @@ public class PlayerMovement2D : MonoBehaviour
 
     public float speed = 5f;
 
+    public float jumpPower = 5f;
+
     //public bool UsePhysics = false;
 
     // Private variables that are not shown in inspector.
