@@ -21,6 +21,8 @@ public class PlayerMovement2D : MonoBehaviour
 
     public float jumpPower = 5f;
 
+    Rigidbody2D rb2D;
+
     //public bool UsePhysics = false;
 
     // Private variables that are not shown in inspector.
@@ -39,7 +41,7 @@ public class PlayerMovement2D : MonoBehaviour
     }
     void Start()
     {
-
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -55,10 +57,22 @@ public class PlayerMovement2D : MonoBehaviour
         }
         VerticalInput = Input.GetAxisRaw("Vertical"); // raw for this, because jumping speed doesnt have to be accelerated
 
-            Vector2 position = transform.position;
-            position.x += speed * HorizontalInput * Time.deltaTime;
-            position.y += speed * VerticalInput * Time.deltaTime;
-            transform.position = position;
+        Vector2 position = transform.position;
+        position.x += speed * HorizontalInput * Time.deltaTime;
+            
+
+        //It now jumps with rb2d so that it feels more like a jump you can swich it out bu un commenting the code below this and deleting the if statment with the add fource
+        //position.y += speed * VerticalInput * Time.deltaTime;
+
+        if(Input.GetKeyDown(KeyCode.W) && canJump == true || Input.GetKeyDown(KeyCode.UpArrow) && canJump == true)
+        {
+            rb2D.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
+        }
+
+        //I changed this to a MoveTowards to see if it would work. it seemed to. you can change it back if u want
+        transform.position = Vector3.MoveTowards(transform.position, position, speed);
+
+        //transform.position = position;
         
 
         if (isPlatformer)
