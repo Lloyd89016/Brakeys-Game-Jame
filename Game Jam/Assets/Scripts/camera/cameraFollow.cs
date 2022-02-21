@@ -26,9 +26,10 @@ public class cameraFollow : MonoBehaviour
 		targetPos = transform.position;
 	}
 
-	// Update is called once per frame
-	void FixedUpdate()
-	{
+    // Update is called once per frame
+
+    private void LateUpdate()
+    {
 
 		Vector3 posNoZ = transform.position;
 		posNoZ.z = target.transform.position.z;
