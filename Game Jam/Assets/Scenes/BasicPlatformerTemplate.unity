@@ -140,11 +140,8 @@ GameObject:
   - component: {fileID: 222190897}
   - component: {fileID: 222190896}
 <<<<<<< HEAD
-<<<<<<< HEAD
   - component: {fileID: 222190899}
   - component: {fileID: 222190900}
-=======
->>>>>>> parent of f028893 (Added lighting)
 =======
 >>>>>>> parent of f028893 (Added lighting)
   m_Layer: 0
@@ -220,7 +217,6 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!114 &222190899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,8 +264,6 @@ MonoBehaviour:
   target: {fileID: 1591551413}
   offset: {x: 0, y: 0, z: 0}
   speed: 15
-=======
->>>>>>> parent of f028893 (Added lighting)
 =======
 >>>>>>> parent of f028893 (Added lighting)
 --- !u!1 &281132861
@@ -491,7 +485,6 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &878189622
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,8 +557,6 @@ Transform:
   m_Father: {fileID: 1591551417}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> parent of f028893 (Added lighting)
 =======
 >>>>>>> parent of f028893 (Added lighting)
 --- !u!1 &921284192
@@ -2146,13 +2137,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_Father: {fileID: 1591551417}
   m_RootOrder: 0
-=======
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
->>>>>>> parent of f028893 (Added lighting)
 =======
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -2289,7 +2275,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
 <<<<<<< HEAD
-<<<<<<< HEAD
 <<<<<<< Updated upstream
   - {fileID: 1491686182}
   - {fileID: 878189624}
@@ -2297,9 +2282,6 @@ Transform:
   - {fileID: 222190898}
   - {fileID: 2074549250}
 >>>>>>> Stashed changes
-=======
-  - {fileID: 222190898}
->>>>>>> parent of f028893 (Added lighting)
 =======
   - {fileID: 222190898}
 >>>>>>> parent of f028893 (Added lighting)
