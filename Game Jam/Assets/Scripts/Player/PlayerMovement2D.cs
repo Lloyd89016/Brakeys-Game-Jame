@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement2D : MonoBehaviour
 {
-
-    // SCRIPT IN PROGRESS: SCRIPT IS NOT READY YET.
     [Header("Neccessary")]
     public LayerMask groundLayerMask;
+    public GameObject groundChecker;
 
     [Header("Platformer")]
     public bool isPlatformer = false;
@@ -64,7 +63,7 @@ public class PlayerMovement2D : MonoBehaviour
         //It now jumps with rb2d so that it feels more like a jump you can swich it out bu un commenting the code below this and deleting the if statment with the add fource
         //position.y += speed * VerticalInput * Time.deltaTime;
 
-        if(Input.GetKeyDown(KeyCode.W) && canJump == true || Input.GetKeyDown(KeyCode.UpArrow) && canJump == true)
+        if(Input.GetKeyDown(KeyCode.W) && canJump == true && rb2D.velocity.y == 0|| Input.GetKeyDown(KeyCode.UpArrow) && canJump == true && rb2D.velocity.y == 0)
         {
             rb2D.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
         }
@@ -77,7 +76,7 @@ public class PlayerMovement2D : MonoBehaviour
 
         if (isPlatformer)
         {
-            canJump = Physics2D.OverlapCircle(transform.position, isPlatformer_jumpRadius, groundLayerMask);
+            canJump = Physics2D.OverlapCircle(groundChecker.transform.position, isPlatformer_jumpRadius, groundLayerMask);
         }
     }
 
