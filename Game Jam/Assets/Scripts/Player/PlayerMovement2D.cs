@@ -58,15 +58,14 @@ public class PlayerMovement2D : MonoBehaviour
 
         Vector2 position = transform.position;
         position.x += speed * HorizontalInput * Time.deltaTime;
-            
+
 
         //It now jumps with rb2d so that it feels more like a jump you can swich it out bu un commenting the code below this and deleting the if statment with the add fource
         //position.y += speed * VerticalInput * Time.deltaTime;
-
-        if(Input.GetKeyDown(KeyCode.W) && canJump == true && rb2D.velocity.y == 0|| Input.GetKeyDown(KeyCode.UpArrow) && canJump == true && rb2D.velocity.y == 0)
-        {
-            rb2D.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
-        }
+            if (Input.GetKeyDown(KeyCode.W) && canJump == true || Input.GetKeyDown(KeyCode.UpArrow) && canJump == true)
+            {
+            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpPower);
+            }
 
         //I changed this to a MoveTowards to see if it would work. it seemed to. you can change it back if u want
         transform.position = Vector3.MoveTowards(transform.position, position, speed);
