@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PlayerFlashlight : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Vector3 diff;
+    private float rotZ;
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+        //I may have stole this code off of reddit...
+        //(It makes the player point towards the mouse)
+
+        diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        //normalize difference  
+        diff.Normalize();
+
+        //calculate rotation
+        rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        //apply to object
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
     }
 }
