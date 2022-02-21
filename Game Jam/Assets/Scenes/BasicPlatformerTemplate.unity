@@ -139,8 +139,11 @@ GameObject:
   - component: {fileID: 222190898}
   - component: {fileID: 222190897}
   - component: {fileID: 222190896}
+<<<<<<< HEAD
   - component: {fileID: 222190899}
   - component: {fileID: 222190900}
+=======
+>>>>>>> parent of f028893 (Added lighting)
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -213,6 +216,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &222190899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +264,8 @@ MonoBehaviour:
   target: {fileID: 1591551413}
   offset: {x: 0, y: 0, z: 0}
   speed: 15
+=======
+>>>>>>> parent of f028893 (Added lighting)
 --- !u!1 &281132861
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +452,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -478,6 +484,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &878189622
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +557,8 @@ Transform:
   m_Father: {fileID: 1591551417}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of f028893 (Added lighting)
 --- !u!1 &921284192
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +596,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -775,7 +784,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -889,7 +898,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2123,12 +2132,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491686180}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.389265, y: -8.625561, z: -451.68182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.489265, y: 3.4344401, z: -451.68182}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 1591551417}
   m_RootOrder: 0
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+>>>>>>> parent of f028893 (Added lighting)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1591551413
 GameObject:
@@ -2217,7 +2231,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2257,9 +2271,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591551413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.18, y: -0.1, z: 0}
+  m_LocalPosition: {x: 10.1, y: 12.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   - {fileID: 1491686182}
   - {fileID: 878189624}
@@ -2267,6 +2282,9 @@ Transform:
   - {fileID: 222190898}
   - {fileID: 2074549250}
 >>>>>>> Stashed changes
+=======
+  - {fileID: 222190898}
+>>>>>>> parent of f028893 (Added lighting)
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2381,7 +2399,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2425,10 +2443,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 385289695}
     m_Modifications:
-    - target: {fileID: 8233104425272133611, guid: c82259dd1f41f0647bf226158814e4b0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 8233104425272133613, guid: c82259dd1f41f0647bf226158814e4b0, type: 3}
       propertyPath: m_AngleLimits.m_LowerAngle
       value: -30
@@ -2493,10 +2507,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8233104425738368095, guid: c82259dd1f41f0647bf226158814e4b0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 8233104426163452070, guid: c82259dd1f41f0647bf226158814e4b0, type: 3}
       propertyPath: m_AngleLimits.m_LowerAngle
       value: -30
@@ -2626,10 +2636,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 385289695}
     m_Modifications:
-    - target: {fileID: 6122607928199286028, guid: 82e9e664838ba2241a470298e725e2fc, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 6122607928199286029, guid: 82e9e664838ba2241a470298e725e2fc, type: 3}
       propertyPath: m_RootOrder
       value: 1
