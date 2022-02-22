@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerFlashlight : MonoBehaviour
 {
     private Vector3 diff;
-    private float rotZ;
+    private float rotZ; 
 
     void Update()
     {
