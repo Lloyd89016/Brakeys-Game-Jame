@@ -47,7 +47,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -75,8 +75,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104425243618099
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -145,15 +145,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.66598684, y: -0.00000053737307}
+  m_ConnectedAnchor: {x: 0.66598564, y: -0.000000076368444}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104425272133615
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 8233104425272133615}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.0515, y: -3.3104, z: 0}
-  m_LocalScale: {x: 0.17988002, y: 11.780199, z: 1}
+  m_LocalScale: {x: 0.17988002, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 8233104425738368092}
   m_RootOrder: 12
@@ -207,7 +207,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -251,15 +251,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!233 &8233104425272133613
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -275,15 +275,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.6869549, y: -0.055975784}
+  m_ConnectedAnchor: {x: 0.6869549, y: -0.055975307}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!61 &8233104425272133608
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -357,7 +357,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -378,15 +378,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.70917326, y: -0.00000039170126}
+  m_ConnectedAnchor: {x: 0.70917374, y: -0.00000015328293}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104425358482232
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +434,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -455,15 +455,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.70917326, y: -0.00000039170126}
+  m_ConnectedAnchor: {x: 0.70917356, y: -0.00000015328281}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104425642713113
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +511,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -532,15 +532,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.5622165, y: -0.0000006910414}
+  m_ConnectedAnchor: {x: 0.5622165, y: -0.0000004526228}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104425738368065
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +605,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -663,8 +663,8 @@ MonoBehaviour:
   - {fileID: 8233104426500632809}
   - {fileID: 8233104426199958451}
   m_Bounds:
-    m_Center: {x: 0.00000014901161, y: 0.00000047683716, z: 0}
-    m_Extent: {x: 0.375, y: 3.312501, z: 0}
+    m_Center: {x: 0.000000029802322, y: 0, z: 0}
+    m_Extent: {x: 0.37500006, y: 3.3125, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &8233104425739447343
@@ -714,7 +714,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -735,15 +735,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.017297741, y: -0.00864887}
+  m_ConnectedAnchor: {x: 0.017297026, y: -0.00864887}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104426151485448
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +791,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -812,15 +812,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.6486893, y: 0.00000017881392}
+  m_ConnectedAnchor: {x: 0.64869004, y: 0.0000001695007}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104426163452072
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +868,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -889,15 +889,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.72652143, y: 0.00000033713877}
+  m_ConnectedAnchor: {x: 0.72652096, y: -0.00000014528632}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104426199958450
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +945,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -966,15 +966,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.59674346, y: 0.00000009722185}
+  m_ConnectedAnchor: {x: 0.596743, y: -0.00000014119675}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104426272646478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +1022,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1043,15 +1043,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 9.800183, y: 16.367437}
+  m_ConnectedAnchor: {x: -3.172738, y: 4.102697}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104426500632810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1099,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1120,15 +1120,15 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.6405107, y: -0.00000018812713}
+  m_ConnectedAnchor: {x: 0.64051133, y: -0.000000398606}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
 --- !u!1 &8233104426867881986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,7 +1176,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1197,12 +1197,12 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.5968039, y: 0.000000008381901}
+  m_ConnectedAnchor: {x: 0.5968034, y: -0.00000023655588}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: 60
+    m_UpperAngle: -60
