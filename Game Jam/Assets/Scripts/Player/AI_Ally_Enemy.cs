@@ -33,7 +33,7 @@ public class AI_Ally_Enemy : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
