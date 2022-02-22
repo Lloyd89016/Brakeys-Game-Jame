@@ -10,7 +10,10 @@ public class PlayerFlashlight : MonoBehaviour
     void Update()
     {
 
-        //I may have stole this code off of reddit...
+        //I may have stole this code off of reddit... 
+        
+        
+        //bruh L, if you steal you won't learn anything... but anyways...
         //(It makes the player point towards the mouse)
 
         diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -21,5 +24,10 @@ public class PlayerFlashlight : MonoBehaviour
         rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         //apply to object
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
     }
 }
