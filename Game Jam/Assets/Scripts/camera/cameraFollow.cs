@@ -23,7 +23,7 @@ public class cameraFollow : MonoBehaviour
 	{
 		target = GameObject.Find("Player");
 
-		targetPos = transform.position;
+		targetPos = transform.position + offset;
 	}
 
     // Update is called once per frame
@@ -34,12 +34,12 @@ public class cameraFollow : MonoBehaviour
 		Vector3 posNoZ = transform.position;
 		posNoZ.z = target.transform.position.z;
 
-		Vector3 targetDirection = (target.transform.position - posNoZ);
+		Vector3 targetDirection = (target.transform.position + offset - posNoZ);
 
 		interpVelocity = targetDirection.magnitude * speed;
 
 		targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime);
 
-		transform.position = Vector3.Lerp(transform.position, targetPos + offset, 0.25f);
+		transform.position = Vector3.Lerp(transform.position, targetPos, 0.25f);
 	}
 }

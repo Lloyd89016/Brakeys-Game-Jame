@@ -9,6 +9,7 @@ public class PlayerFlashlight : MonoBehaviour
     public LayerMask rechargeLayerMask;
     GameObject flashlightLight;
     GameObject groundChecker;
+    GameObject player;
 
     public float chargeDetectionRadius = 5f;
 
@@ -19,11 +20,13 @@ public class PlayerFlashlight : MonoBehaviour
     {
         flashlightLight = GameObject.Find("FlashLight");
         groundChecker = GameObject.Find("GroundChecker");
+        player = GameObject.Find("Player");
         StartCoroutine(decreaseCharge());
     }
 
     void Update()
     {
+        transform.position = player.transform.position;
 
         //I may have stole this code off of reddit... 
         
