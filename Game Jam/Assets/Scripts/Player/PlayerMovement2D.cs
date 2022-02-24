@@ -32,11 +32,13 @@ public class PlayerMovement2D : MonoBehaviour
 
     bool canJump;
 
+    Animator anim;
+
     // Start is called before the first frame update
 
     private void Awake()
     {
-        
+        anim = GetComponent<Animator>();
     }
     void Start()
     {
@@ -46,6 +48,8 @@ public class PlayerMovement2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 prevPos = transform.position;
+
         if (useRoughMovements)
         {
             HorizontalInput = Input.GetAxisRaw("Horizontal");
@@ -69,6 +73,21 @@ public class PlayerMovement2D : MonoBehaviour
 
         //I changed this to a MoveTowards to see if it would work. it seemed to. you can change it back if u want
         transform.position = Vector3.MoveTowards(transform.position, position, speed);
+
+        if (prevPos.x != position.x)
+        {
+            anim.SetFloat("anim", 6);
+        }
+        else if (prevPos.x == position.x)
+        {
+            anim.SetFloat("anim", 11);
+        }
+
+        if (rb2D.velocity.y >= 1 && rb2D.velocity.y < jumpPower)
+        {
+            anim.SetTrigger("jump");
+        }
+        
 
         //transform.position = position;
         
