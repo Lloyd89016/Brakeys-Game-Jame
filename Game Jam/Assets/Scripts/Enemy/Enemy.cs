@@ -5,16 +5,19 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Attach these (Necessary)")]
-    public GameObject flashlight;
-    public Image healthImageBar; // the image bar in the canvas i mean the child of the transform.
+    //W AT THE MOMENT YOU CAN KILL ENEMYS THOUGH OBJECTS PLS FIX THIS IDK HOW MAYBE LINE CASTS THATS WHAT I TRYED BUT IT DIDNT WORK.
 
+    [Header("Attach these (Necessary)")]
+    public Image healthImageBar; // the image bar in the canvas i mean the child of the transform.
     Player player;
+    public GameObject playerObject;
+
     public float health = 1;
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Player>();
+        playerObject = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -39,7 +42,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject == flashlight)
+        if (collision.gameObject.name == "FlashLight")
         {
             health -= player.attackDamage;
         }
