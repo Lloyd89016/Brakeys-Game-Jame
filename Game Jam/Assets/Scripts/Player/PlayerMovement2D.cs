@@ -64,7 +64,7 @@ public class PlayerMovement2D : MonoBehaviour
         //position.y += speed * VerticalInput * Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.W) && canJump == true || Input.GetKeyDown(KeyCode.UpArrow) && canJump == true)
             {
-            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpPower);
+                rb2D.velocity = new Vector2(rb2D.velocity.x, jumpPower);
             }
 
         //I changed this to a MoveTowards to see if it would work. it seemed to. you can change it back if u want
