@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyBackAndFourth : MonoBehaviour
 {
 
-
     void Start()
     {
         target = new Vector3(xPos001, transform.position.y, 0);

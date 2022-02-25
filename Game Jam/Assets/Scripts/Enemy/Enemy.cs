@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     Player player;
     public GameObject playerObject;
 
+    public GameObject EnemyObject;
+
     public float health = 1;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Destroy(EnemyObject);
         }
     }
 
