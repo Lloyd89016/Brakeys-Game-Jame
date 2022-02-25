@@ -711,7 +711,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 19514
+  m_InstanceId: -277044
 --- !u!50 &2327435739878731803
 Rigidbody2D:
   serializedVersion: 4
@@ -728,7 +728,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c8eb919c44d3f94428b8678f864893d8, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthImageBar: {fileID: 2327435738983650778}
   playerObject: {fileID: 0}
-  EnemyObject: {fileID: 0}
+  EnemyObject: {fileID: 162994915938538281}
   health: 1
 --- !u!61 &162994916570424657
 BoxCollider2D:

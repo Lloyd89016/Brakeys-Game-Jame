@@ -15,9 +15,9 @@ public class PlayerMovmentScript2 : MonoBehaviour
 
     bool facingRight = true;
     float moveDirection = 0;
-    bool isGrounded = false;
+    public bool isGrounded = false;
     Rigidbody2D r2d;
-
+    public bool hasStartedJump = false;
     Animator animator;
 
     private void Awake()
@@ -34,8 +34,10 @@ public class PlayerMovmentScript2 : MonoBehaviour
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
         facingRight = transform.localScale.x > 0;
+        hasStartedJump = false;
+        isGrounded = false;
     }
-
+    bool isJumping;
     void Update()
     {
         // Movement controls
@@ -55,23 +57,19 @@ public class PlayerMovmentScript2 : MonoBehaviour
 
         //Animations
         //Left and right walking
-        if (moveDirection > 0 || moveDirection < 0)
+        if (moveDirection > 0 && isGrounded || moveDirection < 0 && isGrounded)
         {
             animator.SetFloat("Speed", 1);
         }
-        else if(moveDirection == 0)
+        else if(moveDirection == 0 && isGrounded)
         {
             animator.SetFloat("Speed", 0);
         }
-        
-        //Jump
-        else if(Input.GetKeyDown(KeyCode.W) && isGrounded)
-        {
-            animator.SetBool("isJumping", true);
-        }
-        else
+
+        if(isGrounded == true)
         {
             animator.SetBool("isJumping", false);
+            animator.SetBool("isFloating", false);
         }
 
         // Change facing direction
@@ -94,7 +92,50 @@ public class PlayerMovmentScript2 : MonoBehaviour
         {
             //Jump
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+            //StartCoroutine(setIsJumping());
         }
+
+        if (isJumping == true)
+        {
+            if(animator.GetBool("isFloating") == false)
+            {
+                animator.SetBool("isJumping", true);
+            }
+
+            if (isGrounded == true)
+            {
+                animator.SetBool("isJumping", false);
+                StartCoroutine(Land());
+            }
+        }
+
+
+        if (hasStartedJump == false && isGrounded == false)
+        {
+            Debug.Log("Called");
+            StartCoroutine(setIsJumping());
+            hasStartedJump = true;
+        }
+    }
+
+    IEnumerator Land()
+    {
+        animator.SetBool("isFloating", false);
+        animator.SetBool("hasLanded", true);
+        isJumping = false;
+        yield return new WaitForSeconds(.1f);
+        animator.SetBool("hasLanded", false);
+        yield return new WaitForSeconds(.1f);
+        hasStartedJump = false;
+    }
+
+    IEnumerator setIsJumping()
+    {
+        yield return new WaitForSeconds(.05f);
+        isJumping = true;
+        yield return new WaitForSeconds(.5f);
+        animator.SetBool("isJumping", false);
+        animator.SetBool("isFloating", true);
     }
 
     void FixedUpdate()

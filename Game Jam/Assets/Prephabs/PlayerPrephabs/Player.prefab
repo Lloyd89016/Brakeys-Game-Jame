@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097076130}
-  m_LocalRotation: {x: -0, y: -0, z: -0.003184474, w: 0.99999493}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0068145166, w: 0.9999768}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1.788755
+  m_PointLightOuterRadius: 3.5977962
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -152,7 +152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1.52}
   m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4627695945893856706
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hello, i am a  cube!
+  m_text: Hello, i am a not a cube!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -375,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4627695946608220377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0.071, y: -0.988, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4627695946834502237}
@@ -396,7 +396,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.14
 --- !u!1 &4627695946834502225
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,12 +407,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4627695946834502237}
   - component: {fileID: 4627695946834502238}
-  - component: {fileID: 4627695946834502224}
   - component: {fileID: 4627695946834502235}
   - component: {fileID: 820687509}
   - component: {fileID: 820687507}
-  - component: {fileID: 820687512}
   - component: {fileID: 820687513}
+  - component: {fileID: 820687514}
+  - component: {fileID: 4482581282281566031}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -479,38 +479,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 9034729591257072209, guid: 7f0df50a2e749e344aee4cbd20b24d48, type: 3}
+  m_Sprite: {fileID: 1248162999017619754, guid: cddea6137970e004eacc677e402ff5aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.4375, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4627695946834502224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4627695946834502225}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f04b9de7a97dafe4dac486396a454b33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  groundChecker: {fileID: 4627695946608220377}
-  isPlatformer: 1
-  isPlatformer_jumpRadius: 0.1
-  useRoughMovements: 0
-  speed: 5
-  jumpPower: 6
 --- !u!114 &4627695946834502235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,7 +519,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c8eb919c44d3f94428b8678f864893d8, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -558,10 +537,48 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2, y: 2}
+  m_Offset: {x: 0.030000001, y: 0.010064721}
+  m_Size: {x: 0.8534833, y: 1.9065113}
   m_Direction: 0
---- !u!95 &820687512
+--- !u!114 &820687513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4627695946834502225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec38073e1c7c3be45bdf79d324e0ba3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 5
+  jumpHeight: 10
+  gravityScale: 1.5
+  mainCamera: {fileID: 0}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  groundChecker: {fileID: 4627695946608220377}
+  isGrounded: 0
+  hasStartedJump: 0
+--- !u!70 &820687514
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4627695946834502225}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.02464211, y: 0.01990664}
+  m_Size: {x: 0.8647864, y: 1.8786781}
+  m_Direction: 0
+--- !u!95 &4482581282281566031
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -580,26 +597,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &820687513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4627695946834502225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec38073e1c7c3be45bdf79d324e0ba3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 3.4
-  jumpHeight: 6.5
-  gravityScale: 1.5
-  mainCamera: {fileID: 0}
-  groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  groundChecker: {fileID: 0}
 --- !u!1 &7814437459957336797
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +608,7 @@ GameObject:
   - component: {fileID: 3328031055582123510}
   - component: {fileID: 4203786869982456279}
   m_Layer: 0
-  m_Name: Point Light 2D
+  m_Name: Big Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
