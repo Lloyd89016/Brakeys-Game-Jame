@@ -117,7 +117,7 @@ public class PlayerMovmentScript2 : MonoBehaviour
             hasStartedJump = true;
         }
     }
-
+    
     IEnumerator Land()
     {
         animator.SetBool("isFloating", false);
