@@ -16,43 +16,68 @@ public class PlayerMovmentScript2 : MonoBehaviour
     bool facingRight = true;
     float moveDirection = 0;
     bool isGrounded = false;
-    Vector3 cameraPos;
     Rigidbody2D r2d;
-    CapsuleCollider2D mainCollider;
-    Transform t;
+
+    Animator anim;
+
+    private void Awake()
+    {
+        //Sets the animator component
+        anim = GetComponent<Animator>();
+    }
 
     // Use this for initialization
     void Start()
     {
-        t = transform;
         r2d = GetComponent<Rigidbody2D>();
-        mainCollider = GetComponent<CapsuleCollider2D>();
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
-        facingRight = t.localScale.x > 0;
-
-        if (mainCamera)
-        {
-            cameraPos = mainCamera.transform.position;
-        }
+        facingRight = transform.localScale.x > 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Movement controls
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
         {
+            // Moving
             moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
         }
         else
         {
             if (isGrounded || r2d.velocity.magnitude < 0.01f)
             {
+                // Not Moving
                 moveDirection = 0;
             }
         }
+
+        //Animations
+
+        //Left and right walking
+        if (r2d.velocity.y > 0 || r2d.velocity.y < 0)
+        {
+            anim.SetFloat("anim", 6);
+        }
+        else if(moveDirection == 0)
+        {
+            anim.SetFloat("anim", 11);
+        }
+
+        //Jump
+        else if(Input.GetKeyDown(KeyCode.W) && isGrounded)
+        {
+            anim.SetTrigger("jump");
+        }
+        else
+        {
+            anim.SetFloat("anim", 11);
+        }
+        
+
+
+
 
         // Change facing direction
         if (moveDirection != 0)
@@ -60,18 +85,19 @@ public class PlayerMovmentScript2 : MonoBehaviour
             if (moveDirection > 0 && !facingRight)
             {
                 facingRight = true;
-                t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
             if (moveDirection < 0 && facingRight)
             {
                 facingRight = false;
-                t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
 
         // Jumping
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
+            //Jump
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
         }
     }
