@@ -18,12 +18,12 @@ public class PlayerMovmentScript2 : MonoBehaviour
     bool isGrounded = false;
     Rigidbody2D r2d;
 
-    Animator anim;
+    Animator animator;
 
     private void Awake()
     {
         //Sets the animator component
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Use this for initialization
@@ -54,30 +54,25 @@ public class PlayerMovmentScript2 : MonoBehaviour
         }
 
         //Animations
-
         //Left and right walking
-        if (r2d.velocity.y > 0 || r2d.velocity.y < 0)
+        if (moveDirection > 0 || moveDirection < 0)
         {
-            anim.SetFloat("anim", 6);
+            animator.SetFloat("Speed", 1);
         }
         else if(moveDirection == 0)
         {
-            anim.SetFloat("anim", 11);
+            animator.SetFloat("Speed", 0);
         }
-
+        
         //Jump
         else if(Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
-            anim.SetTrigger("jump");
+            animator.SetBool("isJumping", true);
         }
         else
         {
-            anim.SetFloat("anim", 11);
+            animator.SetBool("isJumping", false);
         }
-        
-
-
-
 
         // Change facing direction
         if (moveDirection != 0)
