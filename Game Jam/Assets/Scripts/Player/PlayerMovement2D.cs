@@ -73,9 +73,10 @@ public class PlayerMovement2D : MonoBehaviour
 
         //I changed this to a MoveTowards to see if it would work. it seemed to. you can change it back if u want
         transform.position = Vector3.MoveTowards(transform.position, position, speed);
-
+        Debug.Log($"Prev pos: {prevPos}");
         if (prevPos.x != position.x)
         {
+            Debug.Log("prev pos is not equal to posx");
             anim.SetFloat("anim", 6);
         }
         else if (prevPos.x == position.x)
