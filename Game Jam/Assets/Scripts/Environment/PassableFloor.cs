@@ -4,30 +4,26 @@ using UnityEngine;
 
 public class PassableFloor : MonoBehaviour
 {
-    public BoxCollider2D SolidCollider;
-    public passableFloor_playerChecker playerChecker;
 
+    public BoxCollider2D boxCollider;
 
-    void Start()
+    private void Start()
     {
-        playerChecker = transform.GetChild(0).GetComponent<passableFloor_playerChecker>();
+        boxCollider = gameObject.GetComponent<BoxCollider2D>();
     }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (playerChecker.makeSolid == true)
-        {
-            SolidCollider.isTrigger = false;
-        }
-        else if (playerChecker.makeSolid == false)
-        {
-            SolidCollider.isTrigger = true;
-        }
+        boxCollider.isTrigger = true;
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-
+        boxCollider.isTrigger = false;
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        boxCollider.isTrigger = true;
+    }
 }

@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!43 &57809192
+--- !u!43 &37927156
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -553,11 +553,6 @@ Transform:
 --- !u!1 &820687505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4627695946834502225, guid: d571977a6a8c2f44a98534a5cb1884df, type: 3}
-  m_PrefabInstance: {fileID: 2004845803}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &932295126 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4627695946608220377, guid: d571977a6a8c2f44a98534a5cb1884df, type: 3}
   m_PrefabInstance: {fileID: 2004845803}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &956681880
@@ -3909,7 +3904,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1094857362
 MonoBehaviour:
@@ -4084,11 +4079,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1500669666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 162994915938538281, guid: 22e89e9aad9efdd45b28a819361bea4b, type: 3}
-  m_PrefabInstance: {fileID: 1683196942}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1559873807
 GameObject:
   m_ObjectHideFlags: 0
@@ -4287,14 +4277,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2327435739878731805, guid: 22e89e9aad9efdd45b28a819361bea4b, type: 3}
-      propertyPath: EnemyObject
-      value: 
-      objectReference: {fileID: 1500669666}
-    - target: {fileID: 2327435739878731805, guid: 22e89e9aad9efdd45b28a819361bea4b, type: 3}
-      propertyPath: playerObject
-      value: 
-      objectReference: {fileID: 820687505}
     - target: {fileID: 2454362267455760944, guid: 22e89e9aad9efdd45b28a819361bea4b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4351,10 +4333,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3971027605270986686, guid: 22e89e9aad9efdd45b28a819361bea4b, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 820687505}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e89e9aad9efdd45b28a819361bea4b, type: 3}
 --- !u!1001 &2004845803
@@ -4368,14 +4346,6 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1094857360}
-    - target: {fileID: 820687513, guid: d571977a6a8c2f44a98534a5cb1884df, type: 3}
-      propertyPath: groundChecker
-      value: 
-      objectReference: {fileID: 932295126}
-    - target: {fileID: 820687513, guid: d571977a6a8c2f44a98534a5cb1884df, type: 3}
-      propertyPath: groundLayerMask.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4627695946834502225, guid: d571977a6a8c2f44a98534a5cb1884df, type: 3}
       propertyPath: m_Name
       value: Player
