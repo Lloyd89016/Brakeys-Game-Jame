@@ -35,7 +35,6 @@ public class EnemyBackAndFourth : MonoBehaviour
 
     void MoveBackAndFourth()
     {
-
         //turns the enemy sprite
         float higherGoal = Math.Max(xPos001, xPos002);
         if (target.x == higherGoal)
@@ -48,13 +47,14 @@ public class EnemyBackAndFourth : MonoBehaviour
         }
 
         //Changes the target location when it gets to the privius target location
-        if (transform.position == target)
+        if (transform.position.x == target.x)
         {
             if (transform.position.x == xPos001)
             {
                 target = new Vector3(xPos002, transform.position.y, 0);
             }
-            else if (transform.position.x == xPos002)
+            
+            if (transform.position.x == xPos002)
             {
                 target = new Vector3(xPos001, transform.position.y, 0);
             }
