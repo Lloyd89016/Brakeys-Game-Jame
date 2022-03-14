@@ -5,25 +5,42 @@ using UnityEngine;
 public class PassableFloor : MonoBehaviour
 {
 
-    public BoxCollider2D boxCollider;
+    public bool isTopBoxCollider;
+    public bool isBottomBoxCollider;
+
+    public BoxCollider2D topBoxCollider2D;
+    public BoxCollider2D bottomBoxCollider2D;
 
     private void Start()
     {
-        boxCollider = gameObject.GetComponent<BoxCollider2D>();
+        if (isTopBoxCollider)
+        {
+            topBoxCollider2D = GetComponent<BoxCollider2D>();
+        }
+        else if (isBottomBoxCollider)
+        {
+            bottomBoxCollider2D = GetComponent<BoxCollider2D>();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        boxCollider.isTrigger = true;
+        if (isTopBoxCollider)
+        {
+            if (collision.tag == "Player")
+                bottomBoxCollider2D.isTrigger = false;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        boxCollider.isTrigger = false;
+        if (isTopBoxCollider)
+        {
+            if (collision.tag == "Player")
+            {
+                bottomBoxCollider2D.isTrigger = true;
+            }
+        }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        boxCollider.isTrigger = true;
-    }
 }
