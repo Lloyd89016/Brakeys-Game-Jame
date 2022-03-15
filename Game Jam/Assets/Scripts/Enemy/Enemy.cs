@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    //W AT THE MOMENT YOU CAN KILL ENEMYS THOUGH OBJECTS PLS FIX THIS IDK HOW MAYBE LINE CASTS THATS WHAT I TRYED BUT IT DIDNT WORK.
-
     [Header("Attach these (Necessary)")]
     public Image healthImageBar; // the image bar in the canvas i mean the child of the transform.
     Player player;
     public GameObject playerObject;
-
+    public Animator enemyAnimator;
     public GameObject EnemyObject;
+    public MonoBehaviour enemyMovementScript;
 
     public float health = 1;
     // Start is called before the first frame update
@@ -29,8 +28,16 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(EnemyObject);
+            enemyAnimator.SetBool("hasDied", true);
+            enemyMovementScript.enabled = false;
+            StartCoroutine(die());
         }
+    }
+
+    IEnumerator die()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,7 +45,7 @@ public class Enemy : MonoBehaviour
 
         if(collision.gameObject == player)
         {
-            Destroy(player);
+            Destroy(playerObject);
         }
     }
 

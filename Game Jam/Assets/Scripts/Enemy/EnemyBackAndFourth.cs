@@ -6,8 +6,25 @@ using UnityEngine;
 public class EnemyBackAndFourth : MonoBehaviour
 {
 
+    [Header("BACK AND FOURTH")]
+    public float xPos001;
+    public float xPos002;
+
+    public Vector3 target;
+
+    public float moveSpeed = 10;
+
+    [Header("FOLLOW PLAYER")]
+
+    public GameObject player;
+    public float followMoveSpeed = 10;
+    public Vector3 followTarget;
+
+
     void Start()
     {
+        player = GameObject.Find("Player");
+
         target = new Vector3(xPos001, transform.position.y, 0);
     }
 
@@ -15,7 +32,7 @@ public class EnemyBackAndFourth : MonoBehaviour
 
     void Update()
     {
-        if(isFollowActive == true)
+        if (isFollowActive == true)
         {
             Follow();
         }
@@ -25,19 +42,13 @@ public class EnemyBackAndFourth : MonoBehaviour
         }
     }
 
-    [Header("BACK AND FOURTH")]
-    public float xPos001;
-    public float xPos002;
-
-    public Vector3 target;
-
-    public float moveSpeed = 10;
 
     void MoveBackAndFourth()
     {
+        //Finds the higher of the 2 goals and goes to that one first
+        float higherGoal = Math.Max(xPos001, xPos002);
 
         //turns the enemy sprite
-        float higherGoal = Math.Max(xPos001, xPos002);
         if (target.x == higherGoal)
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -67,79 +78,25 @@ public class EnemyBackAndFourth : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
     }
 
-
-
-
-    [Header("FOLLOW PLAYER")]
-    public GameObject player;
-    public LayerMask ground;
-    public LayerMask playerLayerMask; // you have to set a layermask on the player and set the layermask in inspector. Contact W if you get confused.
-    public LayerMask jumpingObjectsLayerMask; // set a layermask on all the objects that the ally/enemy ai should jump.
-
-
-    [Header("Ally")]
-    public bool Ally = false;
-
-    [Header("Enemy")]
-    public bool Enemy = false;
-
-    [Header("Other Settings")]
-    public float speed = 10f;
-    public bool jump = true;
-    public float jumpPower = 10f;
-    public bool pathfinderOn = true;
-    public float pathfinder_StopRadius = 5f; // radius to stop if the player is close. Contact W if you get confused.
-    public float wallsJumpDistance = 2f;
-
-
-    // Private variables
-
-    bool playerInRange;
-    bool shouldJump = false;
-
     void Follow()
     {
-        float prevPos = transform.position.x;
-        playerInRange = Physics2D.OverlapCircle(transform.position, pathfinder_StopRadius, playerLayerMask);
-        if (playerInRange)
+        //Sets the target
+        followTarget = player.transform.position;
+
+        //Sets the y to that of the floor
+        followTarget = new Vector3(followTarget.x, transform.position.y, 0);
+
+        //turns the enemy sprite
+        if (followTarget.x > transform.position.x)
         {
-            pathfinderOn = false;
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
         else
         {
-            pathfinderOn = true;
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
-        if (pathfinderOn)
-        {
-            Vector2 pos = transform.position;
-            if (player.GetComponent<Transform>().position.x > GetComponent<Transform>().position.x)
-            {
-                pos.x += speed * Time.deltaTime;
-            }
-            else if (player.GetComponent<Transform>().position.x < GetComponent<Transform>().position.x)
-            {
-                pos.x += -speed * Time.deltaTime;
-            }
-            transform.position = pos;
-        }
-
-        if (jump)
-        {
-            if (prevPos < transform.position.x)
-            {
-                shouldJump = Physics2D.Raycast(transform.position, Vector2.right, wallsJumpDistance, jumpingObjectsLayerMask);
-            }
-            else if (prevPos > transform.position.x)
-            {
-                shouldJump = Physics2D.Raycast(transform.position, Vector2.left, wallsJumpDistance, jumpingObjectsLayerMask);
-            }
-        }
-
-        if (shouldJump)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower);
-            shouldJump = false;
-        }
+        //moves the enemy
+        transform.position = Vector3.MoveTowards(transform.position, followTarget, followMoveSpeed * Time.deltaTime);
     }
 }
