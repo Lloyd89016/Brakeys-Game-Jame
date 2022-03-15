@@ -30,14 +30,22 @@ public class EnemyFlashlight : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
+            Enemy.GetComponent<EnemyBackAndFourth>().isFollowActive = true;
+            //StartCoroutine(changeIsFollowActive());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
             StartCoroutine(changeIsFollowActive());
         }
     }
 
     IEnumerator changeIsFollowActive()
     {   
-        Enemy.GetComponent<EnemyBackAndFourth>().isFollowActive = true;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         Enemy.GetComponent<EnemyBackAndFourth>().isFollowActive = false;
     }
 }
