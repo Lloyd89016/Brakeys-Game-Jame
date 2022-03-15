@@ -28,7 +28,9 @@ public class PassableFloor : MonoBehaviour
         if (isTopBoxCollider)
         {
             if (collision.tag == "Player")
+            {
                 bottomBoxCollider2D.isTrigger = false;
+            }
         }
     }
 
