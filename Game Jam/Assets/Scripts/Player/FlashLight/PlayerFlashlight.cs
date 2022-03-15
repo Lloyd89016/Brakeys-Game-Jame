@@ -5,11 +5,16 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerFlashlight : MonoBehaviour
 {
+    public bool cheatModeOn = true; // dont forget to turn this off
     public float chargeLeft;
     public LayerMask rechargeLayerMask;
     GameObject flashlightLight;
     GameObject groundChecker;
     GameObject player;
+    [SerializeField] private LayerMask wallLayerMask;
+    bool flashLightTouchingWall;
+    public float rayCastDistance;
+    RaycastHit2D flashlightTouchingWall;
 
     public float chargeDetectionRadius = 5f;
 
@@ -26,12 +31,18 @@ public class PlayerFlashlight : MonoBehaviour
 
     void Update()
     {
+        if (cheatModeOn)
+        {
+            chargeLeft = 10;
+        }
+        //Debug.Log("test125");
         transform.position = player.transform.position;
+        
 
         //I may have stole this code off of reddit... 
-        
+
         //bruh L, if you steal you won't learn anything... but anyways...
-        
+
         //ok mr tutorial man
 
         //(It makes the player point towards the mouse)
@@ -79,6 +90,27 @@ public class PlayerFlashlight : MonoBehaviour
             yield return new WaitForSeconds(.2f);
             StartCoroutine(decreaseCharge());
         }
+    }
+
+    private void FixedUpdate()
+    {
+        //flashlightTouchingWall = Physics2D.Raycast(transform.position, rayCastDistance, wallLayerMask);
+
+        //if (flashlightTouchingWall.collider != null)
+        //{
+        //    Debug.Log("Wall is in the way bruh");
+        //} buggggg 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        Debug.Log($"flashlighttouchingwall variable : {flashlightTouchingWall}"); // checking the flashlight touching variable
+        Debug.Log("bruh colliding with something");
+        Debug.DrawRay(transform.position, Input.mousePosition, Color.blue); // why does this not work :(
+
+        Debug.Log($"Flashlight in the way?: {flashlightTouchingWall.collider != null}");
+        
     }
 
 }
