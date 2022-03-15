@@ -12,11 +12,13 @@ public class Enemy : MonoBehaviour
     public Animator enemyAnimator;
     public GameObject EnemyObject;
     public MonoBehaviour enemyMovementScript;
+    private Rigidbody2D rb2D;
 
     public float health = 1;
     // Start is called before the first frame update
     void Start()
     {
+        rb2D = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
         playerObject = GameObject.Find("Player");
     }
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
         {
             enemyAnimator.SetBool("hasDied", true);
             enemyMovementScript.enabled = false;
+            rb2D.velocity = new Vector2(0.0f, 0.0f);
             StartCoroutine(die());
         }
     }
@@ -37,7 +40,7 @@ public class Enemy : MonoBehaviour
     IEnumerator die()
     {
         yield return new WaitForSeconds(1);
-        Destroy(gameObject);
+        Destroy(EnemyObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
