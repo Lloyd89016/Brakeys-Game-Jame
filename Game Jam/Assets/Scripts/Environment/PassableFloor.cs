@@ -29,11 +29,18 @@ public class PassableFloor : MonoBehaviour
         {
             if (collision.tag == "Player")
             {
-                bottomBoxCollider2D.isTrigger = false;
+                //bottomBoxCollider2D.isTrigger = false;
+                StartCoroutine(MakeTriggerFalse());
             }
         }
     }
-
+    
+    IEnumerator MakeTriggerFalse()
+    {
+        yield return new WaitForSeconds(.4f);
+        bottomBoxCollider2D.isTrigger = false;
+    }
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (isTopBoxCollider)
