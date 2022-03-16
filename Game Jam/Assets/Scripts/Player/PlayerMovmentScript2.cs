@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMovmentScript2 : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class PlayerMovmentScript2 : MonoBehaviour
 
     public LayerMask groundLayerMask;
     public GameObject groundChecker;
+    public Canvas playerCanvas;
+    public TMP_Text textMeshProText;
 
     bool facingRight = true;
     float moveDirection = 0;
@@ -78,11 +82,13 @@ public class PlayerMovmentScript2 : MonoBehaviour
             if (moveDirection > 0 && !facingRight)
             {
                 facingRight = true;
+                textMeshProText.GetComponent<RectTransform>().transform.localScale = new Vector3(1, 1, 1);
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
             if (moveDirection < 0 && facingRight)
             {
                 facingRight = false;
+                textMeshProText.GetComponent<RectTransform>().transform.localScale = new Vector3(-1, 1, 1);
                 transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
@@ -144,6 +150,15 @@ public class PlayerMovmentScript2 : MonoBehaviour
 
         // Apply movement velocity
         r2d.velocity = new Vector2((moveDirection) * maxSpeed, r2d.velocity.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "checkpoint")
+        {
+            playerCanvas.GetComponent<TypeWriterEffect>().RunTMP(collision.GetComponent<checkpoint>().whatToSayOrThink, textMeshProText, collision.GetComponent<checkpoint>().stayingTime);
+            Destroy(collision.gameObject);
+        }
     }
 
 }
