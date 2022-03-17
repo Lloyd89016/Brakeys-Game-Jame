@@ -128,13 +128,14 @@ GameObject:
   - component: {fileID: 4627695945893856706}
   - component: {fileID: 4627695945893856707}
   - component: {fileID: 4627695945893856708}
+  - component: {fileID: 1052719639}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4627695945893856709
 RectTransform:
   m_ObjectHideFlags: 0
@@ -153,7 +154,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 1.52}
-  m_SizeDelta: {x: 2, y: 1}
+  m_SizeDelta: {x: 7, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4627695945893856706
 Canvas:
@@ -216,6 +217,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1052719639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4627695945893856710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e3b4d0e5ca4bd48ba974fb2e926134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeWriterSpeed: 20
+  waitingTimeBeforeTyping: 0
+  textColor: {r: 1, g: 0, b: 0, a: 0}
+  GameControllerReference: {fileID: 0}
+  busy: 0
 --- !u!1 &4627695946072972615
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,8 +268,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.0398}
+  m_SizeDelta: {x: 0, y: -0.0795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4627695946072972612
 CanvasRenderer:
@@ -281,7 +299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hello, i am a not a cube!
+  m_text: I am a kiddooooo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -290,8 +308,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255612
-  m_fontColor: {r: 0.98765564, g: 1, b: 0, a: 1}
+    rgba: 4279238911
+  m_fontColor: {r: 1, g: 0, b: 0.06448603, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -308,13 +326,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.3
-  m_fontSizeBase: 0.3
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -415,7 +433,7 @@ GameObject:
   - component: {fileID: 4482581282281566031}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -560,6 +578,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundChecker: {fileID: 4627695946608220377}
+  playerCanvas: {fileID: 4627695945893856706}
+  textMeshProText: {fileID: 4627695946072972613}
   isGrounded: 0
   hasStartedJump: 0
 --- !u!70 &820687514
