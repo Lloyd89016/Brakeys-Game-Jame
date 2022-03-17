@@ -92,25 +92,35 @@ public class PlayerFlashlight : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        //flashlightTouchingWall = Physics2D.Raycast(transform.position, rayCastDistance, wallLayerMask);
 
-        //if (flashlightTouchingWall.collider != null)
-        //{
-        //    Debug.Log("Wall is in the way bruh");
-        //} buggggg 
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        Debug.Log($"flashlighttouchingwall variable : {flashlightTouchingWall}"); // checking the flashlight touching variable
-        Debug.Log("bruh colliding with something");
-        Debug.DrawRay(transform.position, Input.mousePosition, Color.blue); // why does this not work :(
 
-        Debug.Log($"Flashlight in the way?: {flashlightTouchingWall.collider != null}");
-        
-    }
+
+
+
+
+
+
+
+    //private void FixedUpdate() This is just the code i did to try to fix the flashlight, tried to draw a raycast but i failed to realise the raycast wont rotate like the torch.
+    //{
+    //    //flashlightTouchingWall = Physics2D.Raycast(transform.position, rayCastDistance, wallLayerMask);
+
+    //    //if (flashlightTouchingWall.collider != null)
+    //    //{
+    //    //    Debug.Log("Wall is in the way bruh");
+    //    //} buggggg 
+    //} code that i wrote for trying to fix the flashlight -- commented 
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+
+    //    Debug.Log($"flashlighttouchingwall variable : {flashlightTouchingWall}"); // checking the flashlight touching variable
+    //    Debug.Log("bruh colliding with something");
+    //    Debug.DrawRay(transform.position, Input.mousePosition, Color.blue); // why does this not work :(
+
+    //    Debug.Log($"Flashlight in the way?: {flashlightTouchingWall.collider != null}");
+
+    //} code that i wrote for trying to fix the flashlight -- commented
 
 }
