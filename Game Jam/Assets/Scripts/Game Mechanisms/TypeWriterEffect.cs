@@ -22,11 +22,6 @@ public class TypeWriterEffect : MonoBehaviour
         punctuations = new List<char>{ '?', '.', '!', '#', };
     }
 
-    private void Update()
-    {
-        Debug.Log("Busy");
-    }
-
     public Coroutine Run(string textToType, Text textLabel, float WaitForSeconds)
     {
         return StartCoroutine(typeText(textToType, textLabel, waitingTimeBeforeTyping, textColor));

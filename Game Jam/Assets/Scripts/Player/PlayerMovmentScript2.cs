@@ -118,7 +118,6 @@ public class PlayerMovmentScript2 : MonoBehaviour
 
         if (hasStartedJump == false && isGrounded == false)
         {
-            Debug.Log("Called");
             StartCoroutine(setIsJumping());
             hasStartedJump = true;
         }
