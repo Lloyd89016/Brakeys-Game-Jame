@@ -10,6 +10,7 @@ public class PlayerMovmentScript2 : MonoBehaviour
     public float maxSpeed = 3.4f;
     public float jumpHeight = 6.5f;
     public float gravityScale = 1.5f;
+    public bool canWalk;
     public Camera mainCamera;
 
     public LayerMask groundLayerMask;
@@ -33,6 +34,7 @@ public class PlayerMovmentScript2 : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        canWalk = true;
         r2d = GetComponent<Rigidbody2D>();
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -97,7 +99,11 @@ public class PlayerMovmentScript2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             //Jump
-            r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+            if (canWalk == true)
+            {
+                r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+            }
+
             //StartCoroutine(setIsJumping());
         }
 
@@ -110,6 +116,7 @@ public class PlayerMovmentScript2 : MonoBehaviour
 
             if (isGrounded == true)
             {
+                playerPhysicMaterial.friction = 1;
                 animator.SetBool("isJumping", false);
                 StartCoroutine(Land());
             }
@@ -122,14 +129,19 @@ public class PlayerMovmentScript2 : MonoBehaviour
             hasStartedJump = true;
         }
     }
-    
+
+    public PhysicsMaterial2D playerPhysicMaterial;
+
     IEnumerator Land()
     {
         animator.SetBool("isFloating", false);
         animator.SetBool("hasLanded", true);
+        canWalk = false;
         isJumping = false;
         yield return new WaitForSeconds(.1f);
         animator.SetBool("hasLanded", false);
+        playerPhysicMaterial.friction = 0;
+        canWalk = true;
         yield return new WaitForSeconds(.1f);
         hasStartedJump = false;
     }
@@ -148,7 +160,10 @@ public class PlayerMovmentScript2 : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundChecker.transform.position, 0.14f, groundLayerMask);
 
         // Apply movement velocity
-        r2d.velocity = new Vector2((moveDirection) * maxSpeed, r2d.velocity.y);
+        if(canWalk == true)
+        {
+            r2d.velocity = new Vector2((moveDirection) * maxSpeed, r2d.velocity.y);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
