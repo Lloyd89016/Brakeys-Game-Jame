@@ -10,7 +10,11 @@ public class fallCamera : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");        
+        player = GameObject.Find("Player");
+
+        target = player.transform.position + cameraOffset;
+
+        transform.position = target;
     }
 
     void Update()
