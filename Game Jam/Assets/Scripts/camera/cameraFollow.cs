@@ -4,42 +4,33 @@ using UnityEngine;
 
 public class cameraFollow : MonoBehaviour
 {
+    public Transform player;
+    public bool noY;
+    private float yPos;
+    public Vector3 cameraOffset;
+    public float cameraSpeed = 0.1f;
 
-	private float interpVelocity;
-
-	//the object(player) that the camrea is following
-	public GameObject target;
-
-	//the camera offset
-	public Vector3 offset;
-
-	//the speed of the camera
-	public float speed = 15f;
-
-	//the position that the camera is moving to
-	Vector3 targetPos;
-
-	void Start()
-	{
-		target = GameObject.Find("Player");
-
-		targetPos = transform.position + offset;
-	}
-
-    // Update is called once per frame
-
-    private void LateUpdate()
+    void Start()
     {
+        yPos = transform.position.y;
+        //Sets the position of the camera to the correct place in the first frame
+        transform.position = player.position + cameraOffset;
+    }
 
-		Vector3 posNoZ = transform.position;
-		posNoZ.z = target.transform.position.z;
+    void FixedUpdate()
+    {
+        //Sets the target postion
+        Vector3 targetPos = player.position + cameraOffset;
 
-		Vector3 targetDirection = (target.transform.position + offset - posNoZ);
+        if (noY == true)
+        {
+            targetPos.y = yPos;
+        }
 
-		interpVelocity = targetDirection.magnitude * speed;
+        //Commits a lerp
+        Vector3 lerpPosition = Vector3.Lerp(transform.position, targetPos, cameraSpeed);
 
-		targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime);
-
-		transform.position = Vector3.Lerp(transform.position, targetPos, 0.25f);
-	}
+        //Sets the camera pos to the lerped postion
+        transform.position = lerpPosition;
+    }
 }
