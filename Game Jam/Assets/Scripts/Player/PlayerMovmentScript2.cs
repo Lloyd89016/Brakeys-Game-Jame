@@ -65,7 +65,7 @@ public class PlayerMovmentScript2 : MonoBehaviour
     void Update()
     {
         // Movement controls
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             // Moving
             moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
@@ -81,13 +81,16 @@ public class PlayerMovmentScript2 : MonoBehaviour
 
         //Animations
         //Left and right walking
-        if (moveDirection > 0 && isGrounded || moveDirection < 0 && isGrounded)
+        if (canWalk == true)
         {
-            animator.SetFloat("Speed", 1);
-        }
-        else if(moveDirection == 0 && isGrounded)
-        {
-            animator.SetFloat("Speed", 0);
+            if (moveDirection > 0 && isGrounded || moveDirection < 0 && isGrounded)
+            {
+                animator.SetFloat("Speed", 1);
+            }
+            else if (moveDirection == 0 && isGrounded)
+            {
+                animator.SetFloat("Speed", 0);
+            }
         }
 
         //Makes sure that if the player is on the ground no air animtions can play
@@ -97,20 +100,23 @@ public class PlayerMovmentScript2 : MonoBehaviour
             animator.SetBool("isFloating", false);
         }
 
-        // Change facing direction
-        if (moveDirection != 0)
+        if(canWalk == true)
         {
-            if (moveDirection > 0 && !facingRight)
+            // Change facing direction
+            if (moveDirection != 0)
             {
-                facingRight = true;
-                textMeshProText.GetComponent<RectTransform>().transform.localScale = new Vector3(1, 1, 1);
-                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            }
-            if (moveDirection < 0 && facingRight)
-            {
-                facingRight = false;
-                textMeshProText.GetComponent<RectTransform>().transform.localScale = new Vector3(-1, 1, 1);
-                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                if (moveDirection > 0 && !facingRight)
+                {
+                    facingRight = true;
+                    textMeshProText.GetComponent<RectTransform>().transform.localScale = new Vector3(1, 1, 1);
+                    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                }
+                if (moveDirection < 0 && facingRight)
+                {
+                    facingRight = false;
+                    textMeshProText.GetComponent<RectTransform>().transform.localScale = new Vector3(-1, 1, 1);
+                    transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                }
             }
         }
 
@@ -178,7 +184,7 @@ public class PlayerMovmentScript2 : MonoBehaviour
         animator.SetBool("hasLanded", false);
 
         //waits a bit before leting the player move again
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.2f);
 
         //unlocks the players x position so he can move again
         r2d.constraints = originalConstraints;

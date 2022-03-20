@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4627695945893856709
 RectTransform:
   m_ObjectHideFlags: 0
@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 820687513}
   - component: {fileID: 820687514}
   - component: {fileID: 4482581282281566031}
+  - component: {fileID: 946532626}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -583,7 +584,6 @@ MonoBehaviour:
   textMeshProText: {fileID: 4627695946072972613}
   isGrounded: 0
   hasStartedJump: 0
-  playerPhysicMaterial: {fileID: 6200000, guid: c8eb919c44d3f94428b8678f864893d8, type: 2}
 --- !u!70 &820687514
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -619,6 +619,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &946532626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4627695946834502225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4612c3ea428a74083aeafe439cce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7814437459957336797
 GameObject:
   m_ObjectHideFlags: 0
