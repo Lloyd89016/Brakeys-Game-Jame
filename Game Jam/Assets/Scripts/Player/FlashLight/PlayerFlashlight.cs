@@ -5,6 +5,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerFlashlight : MonoBehaviour
 {
+    public float rechargeStayTime = 5f;
     public float chargeLeft;
     public LayerMask rechargeLayerMask;
     GameObject flashlightLight;
@@ -58,6 +59,7 @@ public class PlayerFlashlight : MonoBehaviour
 
     IEnumerator decreaseCharge()
     {
+        yield return new WaitForSeconds(rechargeStayTime);
         if (chargeLeft > 0)
         {
             yield return new WaitForSeconds(1f);

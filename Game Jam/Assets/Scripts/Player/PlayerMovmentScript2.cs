@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerMovmentScript2 : MonoBehaviour
 {
@@ -12,11 +13,14 @@ public class PlayerMovmentScript2 : MonoBehaviour
     public float gravityScale = 1.5f;
     public bool canWalk;
     public Camera mainCamera;
+    public float dialogueClearTime = 3f;
 
     public LayerMask groundLayerMask;
     public GameObject groundChecker;
     public Canvas playerCanvas;
     public TMP_Text textMeshProText;
+    public Light2D globalLight;
+    public float globalLightatStartValue = 0.05f;
 
     bool facingRight = true;
     float moveDirection = 0;
@@ -31,6 +35,7 @@ public class PlayerMovmentScript2 : MonoBehaviour
     {
         //Sets the animator component
         animator = GetComponent<Animator>();
+        globalLight.intensity = globalLightatStartValue; // makes life of developers easier...
     }
 
     // Use this for initialization
@@ -236,8 +241,15 @@ public class PlayerMovmentScript2 : MonoBehaviour
         if (collision.tag == "checkpoint")
         {
             playerCanvas.GetComponent<TypeWriterEffect>().RunTMP(collision.GetComponent<checkpoint>().whatToSayOrThink, textMeshProText, collision.GetComponent<checkpoint>().stayingTime);
+            StartCoroutine(clearDialogue(dialogueClearTime));
             Destroy(collision.gameObject);
         }
+    }
+    // clearing the dialogue
+    IEnumerator clearDialogue(float dialogueClearTime)
+    {
+        yield return new WaitForSeconds(dialogueClearTime);
+        textMeshProText.text = string.Empty;
     }
 
 }
