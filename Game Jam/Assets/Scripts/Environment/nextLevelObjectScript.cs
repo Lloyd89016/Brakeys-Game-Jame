@@ -5,13 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class nextLevelObjectScript : MonoBehaviour
 {
-    
+    public GameObject blackScreen;
+    private GameObject player;
+    public AudioSource loadSound;
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+        blackScreen.SetActive(false);
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(loadNextScene());
         }
     }
 
@@ -19,7 +28,15 @@ public class nextLevelObjectScript : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(loadNextScene());
         }
+    }
+
+    IEnumerator loadNextScene()
+    {
+        blackScreen.SetActive(true);
+        loadSound.Play();
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
