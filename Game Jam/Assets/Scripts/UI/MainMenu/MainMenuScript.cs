@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject buttonsCanvas;
+    public GameObject LoadScreen;
 
     private void Start()
     {
@@ -16,7 +18,14 @@ public class MainMenuScript : MonoBehaviour
 
     public void playButton()
     {
-        //loads the next scene in the build index when the play button is pressed
+        StartCoroutine(play());
+    }
+
+    IEnumerator play()
+    {
+        Destroy(buttonsCanvas);
+        LoadScreen.SetActive(true);
+        yield return new WaitForSeconds(10);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

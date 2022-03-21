@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             enemyAnimator.SetBool("hasDied", true);
             enemyMovementScript.enabled = false;
             rb2D.velocity = new Vector2(0.0f, 0.0f);
