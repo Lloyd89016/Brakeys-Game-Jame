@@ -6,6 +6,9 @@ using UnityEngine;
 public class EnemyBackAndFourth : MonoBehaviour
 {
 
+    public bool dontGoBackAndFourth;
+    private Animator animator;
+
     [Header("BACK AND FOURTH")]
     public float xPos001;
     public float xPos002;
@@ -25,6 +28,8 @@ public class EnemyBackAndFourth : MonoBehaviour
     {
         player = GameObject.Find("Player");
 
+        animator = gameObject.GetComponent<Animator>();
+
         target = new Vector3(xPos001, transform.position.y, 0);
     }
 
@@ -35,10 +40,16 @@ public class EnemyBackAndFourth : MonoBehaviour
         if (isFollowActive == true)
         {
             Follow();
+            animator.SetBool("isIdle", false);
+        }
+        else if(dontGoBackAndFourth == false)
+        {
+            MoveBackAndFourth();
+            animator.SetBool("isIdle", false);
         }
         else
         {
-            MoveBackAndFourth();
+            animator.SetBool("isIdle", true);
         }
     }
 

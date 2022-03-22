@@ -8,28 +8,31 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class PlayerMovmentScript : MonoBehaviour
 {
     // Move player in 2D space
+
+    //Movement stuff
     public float maxSpeed = 3.4f;
     public float jumpHeight = 6.5f;
     public float gravityScale = 1.5f;
     public bool canWalk;
-    public Camera mainCamera;
-    public float dialogueClearTime = 3f;
-
-    public LayerMask groundLayerMask;
-    public GameObject groundChecker;
-    public Canvas playerCanvas;
-    public TMP_Text textMeshProText;
-    public Light2D globalLight;
-    public float globalLightatStartValue = 0.05f;
-
+    Rigidbody2D r2d;
     bool facingRight = true;
     float moveDirection = 0;
     public bool isGrounded = false;
-    Rigidbody2D r2d;
     public bool hasStartedJump = false;
     Animator animator;
-
     RigidbodyConstraints2D originalConstraints;
+    public LayerMask groundLayerMask;
+    public GameObject groundChecker;
+    bool isJumping;
+
+    //Text
+    public float dialogueClearTime = 3f;
+    public Canvas playerCanvas;
+    public TMP_Text textMeshProText;
+
+    //Lighting stuff
+    public Light2D globalLight;
+    public float globalLightatStartValue = 0.05f;
 
     private void Awake()
     {
@@ -62,17 +65,28 @@ public class PlayerMovmentScript : MonoBehaviour
         //Sets the facing right varable to right.
         facingRight = transform.localScale.x > 0;
 
-        //Sets some variable i cant be bothered to explain here.
+        //Sets some variable I can't be bothered to explain here.
         hasStartedJump = false;
+
+        //Is the player on the ground?
         isGrounded = false;
+
+        //Starts the corountine that playes random animations
+        StartCoroutine(randomAnimations());
     }
-    bool isJumping;
+
     void Update()
     {
         // Movement controls
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift) && isGrounded == true || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && isGrounded == true)
+        {
+            animator.SetFloat("Speed", 2);
+            moveDirection = Input.GetKey(KeyCode.A) ? -1.5f : 1.5f;
+        }
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             // Moving
+            animator.SetFloat("Speed", 1);
             moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
         }
         else
@@ -81,25 +95,18 @@ public class PlayerMovmentScript : MonoBehaviour
             {
                 // Not Moving
                 moveDirection = 0;
-            }
-        }
-
-        //Animations
-        //Left and right walking
-        if (canWalk == true)
-        {
-            if (moveDirection > 0 && isGrounded || moveDirection < 0 && isGrounded)
-            {
-                animator.SetFloat("Speed", 1);
-            }
-            else if (moveDirection == 0 && isGrounded)
-            {
                 animator.SetFloat("Speed", 0);
             }
         }
 
+        //Stops any random animation playing on the press of a key
+        if (Input.anyKeyDown)
+        {
+            animator.SetInteger("RandomAnimation", 0);
+        }
+
         //Makes sure that if the player is on the ground no air animtions can play
-        if(isGrounded == true)
+        if (isGrounded == true)
         {
             animator.SetBool("isJumping", false);
             animator.SetBool("isFloating", false);
@@ -220,6 +227,29 @@ public class PlayerMovmentScript : MonoBehaviour
 
         //Starts the floating animation becuse the jump animation ended and after you jump you fall until you land. Physics are pretty sick.
         animator.SetBool("isFloating", true);
+    }
+
+    //Play random animations whilst standing still
+    IEnumerator randomAnimations()
+    {
+        float waitTime = Random.Range(1, 30);
+        yield return new WaitForSeconds(waitTime);
+        if (Input.anyKey == false  && isGrounded == true)
+        {
+            animator.SetInteger("RandomAnimation", 1);
+        }
+        yield return new WaitForSeconds(1);
+        animator.SetInteger("RandomAnimation", 0);
+
+        waitTime = Random.Range(1, 30);
+        yield return new WaitForSeconds(waitTime);
+        if (Input.anyKey == false && isGrounded == true)
+        {
+            animator.SetInteger("RandomAnimation", 2);
+        }
+        yield return new WaitForSeconds(1);
+        animator.SetInteger("RandomAnimation", 0);
+        StartCoroutine(randomAnimations());
     }
 
     void FixedUpdate()
