@@ -502,7 +502,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49626
+  m_InstanceId: 102104
 --- !u!50 &6974568609664138164
 Rigidbody2D:
   serializedVersion: 4
@@ -536,6 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3cae50a093a664f89798c848875462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontGoBackAndFourth: 0
   xPos001: 51.56
   xPos002: 64.42
   target: {x: 0, y: 0, z: 0}
@@ -575,7 +576,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05169201, y: -0.083999276}
+  m_Offset: {x: -0.056545258, y: -0.5405514}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -586,7 +587,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3956776, y: 3.6233556}
+  m_Size: {x: 1.783699, y: 2.7102513}
   m_EdgeRadius: 0
 --- !u!95 &6974568609664138160
 Animator:
