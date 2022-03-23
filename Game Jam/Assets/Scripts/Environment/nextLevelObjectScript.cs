@@ -15,18 +15,17 @@ public class nextLevelObjectScript : MonoBehaviour
         blackScreen.SetActive(false);
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player" && Input.GetKey(KeyCode.E))
         {
             StartCoroutine(loadNextScene());
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player" && Input.GetKey(KeyCode.E))
         {
             StartCoroutine(loadNextScene());
         }
@@ -35,6 +34,7 @@ public class nextLevelObjectScript : MonoBehaviour
     IEnumerator loadNextScene()
     {
         blackScreen.SetActive(true);
+        player.SetActive(false);
         loadSound.Play();
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
