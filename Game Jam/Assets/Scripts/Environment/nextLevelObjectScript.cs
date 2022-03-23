@@ -9,25 +9,48 @@ public class nextLevelObjectScript : MonoBehaviour
     private GameObject player;
     public AudioSource loadSound;
 
+    public Canvas canvas;
+
+    public bool hasToPressKey;
+
     private void Start()
     {
         player = GameObject.Find("Player");
         blackScreen.SetActive(false);
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Player" && Input.GetKey(KeyCode.E))
-        {
-            StartCoroutine(loadNextScene());
-        }
-    }
-
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player" && Input.GetKey(KeyCode.E))
+        //Turns on the hint text
+        if (collision.gameObject.name == "Player" && hasToPressKey == true)
         {
-            StartCoroutine(loadNextScene());
+            canvas.enabled = true;
+        }
+
+        if (hasToPressKey == true)
+        {
+            if (collision.gameObject.name == "Player" && Input.GetKey(KeyCode.E))
+            {
+                canvas.enabled = false;
+                StartCoroutine(loadNextScene());
+            }
+        }
+        else
+        {
+            if (collision.gameObject.name == "Player")
+            {
+                StartCoroutine(loadNextScene());
+            }
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //Turns off the hint text
+        if (collision.gameObject.name == "Player" && hasToPressKey == true)
+        {
+            canvas.enabled = false;
         }
     }
 

@@ -29,7 +29,7 @@ public class destoryLevel003Enemy : MonoBehaviour
 
     IEnumerator enemyTalk()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(.7f);
 
         //Freezes the player
         player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
