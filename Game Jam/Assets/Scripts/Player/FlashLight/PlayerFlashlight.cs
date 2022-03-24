@@ -22,6 +22,7 @@ public class PlayerFlashlight : MonoBehaviour
         flashlightLight = GameObject.Find("FlashLight");
         groundChecker = GameObject.Find("GroundChecker");
         player = GameObject.Find("Player");
+        chargeLeft = 0;
         StartCoroutine(decreaseCharge());
     }
 

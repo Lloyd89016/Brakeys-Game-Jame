@@ -41,13 +41,13 @@ public class startCutScene001 : MonoBehaviour
         yield return new WaitForSeconds(.2f);
 
         wakeUpText.text = "Wake Up";
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.8f);
 
         wakeUpText.text = "Son";
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.6f);
 
         wakeUpText.text = "Your having a n-";
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(1.1f);
 
         wakeUpText.text = "";
 
