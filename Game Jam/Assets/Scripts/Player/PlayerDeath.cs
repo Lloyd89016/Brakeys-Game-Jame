@@ -7,6 +7,12 @@ public class PlayerDeath : MonoBehaviour
 {
     private void Start()
     {
+        StartCoroutine(goToCheckPoint());
+    }
+
+    IEnumerator goToCheckPoint()
+    {
+        yield return new WaitForSeconds(.1f);
         transform.position = GameObject.Find("CheckPointManager").GetComponent<CheckPointManager>().currentCheckPoint;
     }
 

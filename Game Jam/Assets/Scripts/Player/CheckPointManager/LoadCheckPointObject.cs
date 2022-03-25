@@ -6,7 +6,7 @@ public class LoadCheckPointObject : MonoBehaviour
 {
     public GameObject CheckPointManager;
 
-    void Start()
+    void Awake()
     {
         if(GameObject.Find("CheckPointManager") == null)
         {

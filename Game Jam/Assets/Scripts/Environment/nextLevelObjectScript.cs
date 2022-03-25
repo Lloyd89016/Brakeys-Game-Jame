@@ -9,6 +9,8 @@ public class nextLevelObjectScript : MonoBehaviour
     private GameObject player;
     public AudioSource loadSound;
 
+    public float waitBeforeLoad = 2;
+
     public Canvas canvas;
 
     public bool hasToPressKey;
@@ -59,7 +61,7 @@ public class nextLevelObjectScript : MonoBehaviour
         blackScreen.SetActive(true);
         player.SetActive(false);
         loadSound.Play();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(waitBeforeLoad);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

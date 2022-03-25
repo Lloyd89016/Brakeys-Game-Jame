@@ -15,6 +15,8 @@ public class CheckPointManager : MonoBehaviour
 
     private void Awake()
     {
+        player = GameObject.Find("Player");
+        currentCheckPoint = player.transform.position;
         gameObject.name = "CheckPointManager";
         DontDestroyOnLoad(gameObject);
     }

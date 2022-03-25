@@ -1387,6 +1387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 1079585178}
   loadSound: {fileID: 1643599361}
+  waitBeforeLoad: 10
   canvas: {fileID: 2138719301}
   hasToPressKey: 1
 --- !u!1 &1394385929
