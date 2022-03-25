@@ -434,6 +434,7 @@ GameObject:
   - component: {fileID: 946532626}
   - component: {fileID: 5358571332082810805}
   - component: {fileID: 4566315127207014519}
+  - component: {fileID: 5268662100137897654}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -577,18 +578,17 @@ MonoBehaviour:
   jumpHeight: 10
   gravityScale: 1.5
   canWalk: 0
-  mainCamera: {fileID: 0}
-  dialogueClearTime: 3
+  isGrounded: 0
+  hasStartedJump: 0
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 8
   groundChecker: {fileID: 4627695946608220377}
+  dialogueClearTime: 3
   playerCanvas: {fileID: 4627695945893856706}
   textMeshProText: {fileID: 4627695946072972613}
   globalLight: {fileID: 0}
   globalLightatStartValue: 0.15
-  isGrounded: 0
-  hasStartedJump: 0
 --- !u!70 &820687514
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -664,6 +664,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15455df94ce300459ae5536e9d5f3c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5268662100137897654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4627695946834502225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d72cd35fd39b343a7d7257090bef90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CheckPointManager: {fileID: 7800705778491493527, guid: 92426f539edee43468185f143dcb44a1, type: 3}
 --- !u!1 &7814437459957336797
 GameObject:
   m_ObjectHideFlags: 0
