@@ -8,7 +8,8 @@ public class MainMenuScript : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject buttonsCanvas;
-    public GameObject LoadScreen;
+    public Text text;
+    public GameObject loadCanvas;
 
     private void Start()
     {
@@ -24,8 +25,22 @@ public class MainMenuScript : MonoBehaviour
     IEnumerator play()
     {
         Destroy(buttonsCanvas);
-        LoadScreen.SetActive(true);
+        loadCanvas.SetActive(true);
+        text.text = "They wander through the caves and corridors of the mind, fearing nothing but a ray of light shining upon their dark figure. Casting them away from this plane of existance.";
+        yield return new WaitForSeconds(7);
+
+        text.text = "Oh look at the time!";
+        yield return new WaitForSeconds(2);
+
+        text.text = "Its time for you to go to bed. We can keep reading tomorow night";
+        yield return new WaitForSeconds(4);
+
+        text.text = "Goodnight son";
+        yield return new WaitForSeconds(1);
+
+        text.text = "";
         yield return new WaitForSeconds(10);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
