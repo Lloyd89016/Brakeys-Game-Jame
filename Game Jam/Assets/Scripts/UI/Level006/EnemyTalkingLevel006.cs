@@ -43,25 +43,25 @@ public class EnemyTalkingLevel006 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "You shoulden't be walking around";
+        text.text = "You shouldn't be meanding around";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Well good luck getting out of here";
+        text.text = "Well, best wishes of getting out of here";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Trust me you'll need it";
+        text.text = "Or. You could just go back to sleeping";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(10);
 
         //New line
-        text.text = "Your doing a bad job";
+        text.text = "You're doing a bad job";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
@@ -79,13 +79,13 @@ public class EnemyTalkingLevel006 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Becuse I can garentee that you will never be able to get to the exit.";
+        text.text = "Because I can garentee that you will never be able to get to the exit.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "If there even is an exit";
+        text.text = "If there even is one";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
@@ -97,7 +97,7 @@ public class EnemyTalkingLevel006 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "so at the moment your just kind of trying to get to somthing that dosent exist";
+        text.text = "So at the moment you're trying to get to something that doesn't exist";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
@@ -109,7 +109,7 @@ public class EnemyTalkingLevel006 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Whats even worse is that your not even doing a good job of it";
+        text.text = "What's even worse is that your'e not even doing a good job of it";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
