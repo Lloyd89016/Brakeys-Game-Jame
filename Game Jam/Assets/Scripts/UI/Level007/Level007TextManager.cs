@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Level007TextManager : MonoBehaviour
 {
     public Text motherText;
-    public Text MonsterText;
-    public Text FatherText;
+    public Text monsterText;
+    public Text fatherText;
 
     public GameObject wakeUpButton;
     public GameObject stayButton;
@@ -26,9 +27,9 @@ public class Level007TextManager : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         //Monster Text Line
-        MonsterText.text = "What is that voice?";
+        monsterText.text = "What is that voice?";
         yield return new WaitForSeconds(3);
-        MonsterText.text = "";
+        monsterText.text = "";
         yield return new WaitForSeconds(1);
 
         //Mother Text line
@@ -38,21 +39,21 @@ public class Level007TextManager : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         //Monster Text Line
-        MonsterText.text = "Ignore it! Don't listen.";
+        monsterText.text = "Ignore it! Don't listen.";
         yield return new WaitForSeconds(3);
-        MonsterText.text = "";
+        monsterText.text = "";
         yield return new WaitForSeconds(1);
 
         //Monster Text Line
-        MonsterText.text = "You don't have to listen to it.";
+        monsterText.text = "You don't have to listen to it.";
         yield return new WaitForSeconds(3);
-        MonsterText.text = "";
+        monsterText.text = "";
         yield return new WaitForSeconds(1);
 
         //Monster Text Line
-        MonsterText.text = "It doesn't control you";
+        monsterText.text = "It doesn't control you";
         yield return new WaitForSeconds(3);
-        MonsterText.text = "";
+        monsterText.text = "";
         yield return new WaitForSeconds(1);
 
         //Mother Text line
@@ -62,18 +63,18 @@ public class Level007TextManager : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         //Monster Text Line
-        MonsterText.text = "No.";
+        monsterText.text = "No.";
         yield return new WaitForSeconds(3);
         //Monster Text Line
-        MonsterText.text = "Don't do it.";
+        monsterText.text = "Don't do it.";
         yield return new WaitForSeconds(1);
         //Monster Text Line
-        MonsterText.text = "Don't abondoned me!";
+        monsterText.text = "Don't abondoned me!";
         yield return new WaitForSeconds(3);
         //Monster Text Line
-        MonsterText.text = "Please...";
+        monsterText.text = "Please...";
         yield return new WaitForSeconds(1);
-        MonsterText.text = "";
+        monsterText.text = "";
 
         wakeUpButton.SetActive(true);
         stayButton.SetActive(true);
@@ -88,6 +89,9 @@ public class Level007TextManager : MonoBehaviour
 
     IEnumerator stayText()
     {
+        wakeUpButton.SetActive(false);
+        stayButton.SetActive(false);
+
         //Mother Text line
         motherText.text = "H- he's stops breathing";
         yield return new WaitForSeconds(3);
@@ -105,9 +109,9 @@ public class Level007TextManager : MonoBehaviour
         motherText.text = "";
         yield return new WaitForSeconds(3);
 
-        FatherText.text = "What should I do??";
+        fatherText.text = "What should I do?";
         yield return new WaitForSeconds(3);
-        motherText.text = "";
+        fatherText.text = "";
         yield return new WaitForSeconds(3);
 
 
@@ -116,31 +120,31 @@ public class Level007TextManager : MonoBehaviour
         motherText.text = "";
         yield return new WaitForSeconds(3);
 
-        FatherText.text = "Let me look at him";
+        fatherText.text = "Let me look at him";
         yield return new WaitForSeconds(3);
         motherText.text = "";
         yield return new WaitForSeconds(3);
 
-        FatherText.text = "...H-He's gone";
+        fatherText.text = "...H-He's gone";
         yield return new WaitForSeconds(3);
         motherText.text = "";
         yield return new WaitForSeconds(3);
 
         //Monster Text Line
-        MonsterText.text = "Let's go back home. My darling child.";
+        monsterText.text = "Let's go back home. My darling child.";
         yield return new WaitForSeconds(3);
 
         //Monster Text Line
-        MonsterText.text = "Now we can finally be togther.";
+        monsterText.text = "Now we can finally be togther.";
         yield return new WaitForSeconds(3);
 
         //Monster Text Line
-        MonsterText.text = "Evermore.";
+        monsterText.text = "Forever.";
         yield return new WaitForSeconds(3);
-        MonsterText.text = "";
+        monsterText.text = "";
         yield return new WaitForSeconds(3);
 
-
+        SceneManager.LoadScene("Credits");
     }
 
 
@@ -152,37 +156,42 @@ public class Level007TextManager : MonoBehaviour
 
     IEnumerator LeaveText()
     {
+        wakeUpButton.SetActive(false);
+        stayButton.SetActive(false);
+
         //Monster Text Line
-        MonsterText.text = "Why would you leave me? I thought we were firends.";
+        monsterText.text = "Why would you leave me? I thought we were firends.";
         yield return new WaitForSeconds(3);
 
         //Monster Text Line
-        MonsterText.text = "Fine.";
+        monsterText.text = "Fine.";
         yield return new WaitForSeconds(3);
 
         //Monster Text Line
-        MonsterText.text = "Just-";
+        monsterText.text = "Just-";
         yield return new WaitForSeconds(3);
 
         //Monster Text Line
-        MonsterText.text = "Just go.";
+        monsterText.text = "Just go.";
         yield return new WaitForSeconds(3);
 
         //Monster Text Line
-        MonsterText.text = "I will just stay here.";
+        monsterText.text = "I will just stay here.";
         yield return new WaitForSeconds(3);
 
         //Monster Text Line
-        MonsterText.text = "Alone.";
+        monsterText.text = "Alone.";
         yield return new WaitForSeconds(3);
 
 
         //Monster Text Line
-        MonsterText.text = "For eternity";
+        monsterText.text = "For eternity";
         yield return new WaitForSeconds(3);
 
         //Monster Text Line
-        MonsterText.text = "Fairwell child.";
+        monsterText.text = "Fairwell child.";
         yield return new WaitForSeconds(3);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
