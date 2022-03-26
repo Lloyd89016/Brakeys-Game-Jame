@@ -21,22 +21,19 @@ public class level003Text : MonoBehaviour
         player.GetComponent<PlayerMovmentScript>().enabled = false;
         
         yield return new WaitForSeconds(3);
-        enemyText.text = "Congradulations.";
+        enemyText.text = "Hello again";
 
         yield return new WaitForSeconds(3);
-        enemyText.text = "You did it.";
+        enemyText.text = "So. This is my home.";
 
         yield return new WaitForSeconds(3);
-        enemyText.text = "You woke up";
+        enemyText.text = "Feel free to make yourself at home.";
 
         yield return new WaitForSeconds(3);
-        enemyText.text = "You should be proud.";
+        enemyText.text = "Oh i have an idea! You could go out and play if you wanted.";
 
         yield return new WaitForSeconds(3);
-        enemyText.text = "Not everyone manages.";
-
-        yield return new WaitForSeconds(3);
-        enemyText.text = "Well. Go about your life. I wont bother you.";
+        enemyText.text = "The fresh air will be good for you.";
 
         yield return new WaitForSeconds(3);
         enemyText.text = "";

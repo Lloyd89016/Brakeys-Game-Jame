@@ -26,6 +26,12 @@ public class Level007TextManager : MonoBehaviour
         motherText.text = "";
         yield return new WaitForSeconds(1);
 
+        //Mother Text line
+        motherText.text = "Son wake up, your having a nightmare";
+        yield return new WaitForSeconds(3);
+        motherText.text = "";
+        yield return new WaitForSeconds(1);
+
         //Monster Text Line
         monsterText.text = "What is that voice?";
         yield return new WaitForSeconds(3);

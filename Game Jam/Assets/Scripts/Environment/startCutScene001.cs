@@ -27,6 +27,7 @@ public class startCutScene001 : MonoBehaviour
     {
         if (col.gameObject.name == "Player")
         {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine(cutScene());
         }
     }
@@ -38,16 +39,28 @@ public class startCutScene001 : MonoBehaviour
         //enemy002.SetActive(true);
 
         //Flashes the "Wake Up" Text
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(2f);
 
-        wakeUpText.text = "Wake Up";
-        yield return new WaitForSeconds(.8f);
+        wakeUpText.text = "Hello there child!";
+        yield return new WaitForSeconds(2f);
 
-        wakeUpText.text = "Son";
-        yield return new WaitForSeconds(.6f);
+        wakeUpText.text = "You seem to be lost";
+        yield return new WaitForSeconds(2f);
 
-        wakeUpText.text = "Your having a n-";
-        yield return new WaitForSeconds(1.1f);
+        wakeUpText.text = "And afraid.";
+        yield return new WaitForSeconds(2f);
+
+        wakeUpText.text = "And stuck in a hole.";
+        yield return new WaitForSeconds(2f);
+
+        wakeUpText.text = "Don't worry";
+        yield return new WaitForSeconds(2f);
+
+        wakeUpText.text = "I'll take you in";
+        yield return new WaitForSeconds(2f);
+
+        wakeUpText.text = "Let me bring you to my dewlling";
+        yield return new WaitForSeconds(2f);
 
         wakeUpText.text = "";
 
