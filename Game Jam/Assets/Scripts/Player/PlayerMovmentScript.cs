@@ -255,7 +255,7 @@ public class PlayerMovmentScript : MonoBehaviour
     void FixedUpdate()
     {
         //Checks if the player is touching the ground by puting a circle at its feet and seeing if anything is touching that. Then it looks for the layer the circle it touching. If it has the ground layer the yeipee its touching the ground. Lovley.
-        isGrounded = Physics2D.OverlapCircle(groundChecker.transform.position, 0.14f, groundLayerMask);
+        isGrounded = Physics2D.OverlapCircle(groundChecker.transform.position, 0.2f, groundLayerMask);
 
         //Moves if the "canWalk" is true. The only reason it wouldent be is if the player just landed.
         if(canWalk == true)
