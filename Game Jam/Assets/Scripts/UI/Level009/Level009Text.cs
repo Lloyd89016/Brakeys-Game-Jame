@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class Level009Text : MonoBehaviour
 {
     public Text motherText;
     public Text fatherText;
 
-    public Image backDrop;
+    public Light2D light2D;
 
     public Text buttonPromptText;
 
     private bool canOpenEyes;
 
-    void Start()
+    public void Start()
     {
-        StartCoroutine(ChangeText());
+        buttonPromptText.text = "E to open eyes";
+
+        canOpenEyes = true;
     }
 
     private void Update()
@@ -28,35 +31,15 @@ public class Level009Text : MonoBehaviour
         }
     }
 
-    IEnumerator ChangeText()
-    {
-        //Mother Text line
-        motherText.text = "His eye twitched! Oh please be ok.";
-        yield return new WaitForSeconds(3);
-        motherText.text = "";
-        yield return new WaitForSeconds(1);
-
-        //Mother Text line
-        motherText.text = "You can do it son open your eyes.";
-        yield return new WaitForSeconds(3);
-        motherText.text = "";
-        yield return new WaitForSeconds(1);
-
-        //Father Text line
-        fatherText.text = "You can do it kid.";
-        yield return new WaitForSeconds(3);
-        fatherText.text = "";
-        yield return new WaitForSeconds(1);
-
-        buttonPromptText.text = "E to open eyes";
-
-        canOpenEyes = true;
-    }
-
     IEnumerator OpenEyes()
     {
-        backDrop.color = Color.white;
-        yield return new WaitForSeconds(.2f);
+        while(light2D.intensity < 15)
+        {
+            yield return new WaitForSeconds(.1f);
+            light2D.intensity = light2D.intensity + .1f;
+        }
+
+        yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene("Credits");
     }
 }

@@ -31,6 +31,11 @@ public class CheckPointManager : MonoBehaviour
     {
         if(newSceneLoaded == true)
         {
+            if(GameObject.Find("Player") == null)
+            {
+                Destroy(gameObject);
+            }
+
             player = GameObject.Find("Player");
 
             //Checks if its the first time the scenes been loaded

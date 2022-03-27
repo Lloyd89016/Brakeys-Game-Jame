@@ -1425,6 +1425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 1079585178}
   loadSound: {fileID: 1643599361}
+  waitBeforeLoad: 2
   canvas: {fileID: 1125452480}
   hasToPressKey: 1
 --- !u!1 &1394385929
@@ -2155,6 +2156,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627695946834502237, guid: d571977a6a8c2f44a98534a5cb1884df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895340534650943388, guid: d571977a6a8c2f44a98534a5cb1884df, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

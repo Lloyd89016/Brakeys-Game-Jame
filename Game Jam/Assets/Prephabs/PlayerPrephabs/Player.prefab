@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4627695945893856709
 RectTransform:
   m_ObjectHideFlags: 0
@@ -153,8 +153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.52}
-  m_SizeDelta: {x: 7, y: 1}
+  m_AnchoredPosition: {x: 0, y: 2.1009}
+  m_SizeDelta: {x: 7, y: 1.7942}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4627695945893856706
 Canvas:
@@ -175,7 +175,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &4627695945893856707
 MonoBehaviour:
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeWriterSpeed: 20
   waitingTimeBeforeTyping: 0
-  textColor: {r: 1, g: 0, b: 0, a: 0}
+  textColor: {r: 0.5019608, g: 0.7254902, b: 0.16078432, a: 0}
   GameControllerReference: {fileID: 0}
   busy: 0
 --- !u!1 &4627695946072972615
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I am a kiddooooo
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279238911
-  m_fontColor: {r: 1, g: 0, b: 0.06448603, a: 1}
+  m_fontColor: {r: 0.4005107, g: 0.5943396, b: 0.11438231, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

@@ -21,25 +21,26 @@ public class Level005Text : MonoBehaviour
         //Freezes the player
         player.GetComponent<PlayerMovmentScript>().enabled = false;
 
-        yield return new WaitForSeconds(3);
-        enemyText.text = "Back from playing already?.";
+        yield return new WaitForSeconds(2);
 
-        yield return new WaitForSeconds(3);
+        enemyText.text = "Back from playing already?";
+        yield return new WaitForSeconds(1.5f);
+
         enemyText.text = "How was it?";
+        yield return new WaitForSeconds(1.2f);
 
-        yield return new WaitForSeconds(3);
-        enemyText.text = "Fun im sure";
+        enemyText.text = "Fun im sure.";
+        yield return new WaitForSeconds(1.2f);
 
-        yield return new WaitForSeconds(3);
         enemyText.text = "Now I think its time for bed.";
+        yield return new WaitForSeconds(2);
 
-        yield return new WaitForSeconds(3);
         enemyText.text = "Don't you?";
+        yield return new WaitForSeconds(1.5f);
 
-        yield return new WaitForSeconds(3);
         enemyText.text = "Goodnight child.";
+        yield return new WaitForSeconds(1.5f);
 
-        yield return new WaitForSeconds(3);
         enemyText.text = "";
         player.GetComponent<PlayerMovmentScript>().enabled = true;
     }

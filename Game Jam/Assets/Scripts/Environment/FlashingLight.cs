@@ -51,6 +51,9 @@ public class FlashingLight : MonoBehaviour
         float waitTime2 = Random.Range(waitToTurnOffLowest, waitToTurnOffHighest);
         yield return new WaitForSeconds(waitTime2);
 
+        waitTime = 0;
+        waitTime2 = 0;
+
         //Repetes
         StartCoroutine(flashingLight());
     }

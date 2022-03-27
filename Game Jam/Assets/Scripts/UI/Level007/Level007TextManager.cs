@@ -22,64 +22,72 @@ public class Level007TextManager : MonoBehaviour
     {
         //Mother Text line
         motherText.text = "Wake up";
-        yield return new WaitForSeconds(3);
-        motherText.text = "";
         yield return new WaitForSeconds(1);
+        motherText.text = "";
+        yield return new WaitForSeconds(.5f);
 
         //Mother Text line
         motherText.text = "Son wake up, your having a nightmare";
         yield return new WaitForSeconds(3);
         motherText.text = "";
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
         //Monster Text Line
-        monsterText.text = "What is that voice?";
-        yield return new WaitForSeconds(3);
+        monsterText.text = "Ignore her";
+        yield return new WaitForSeconds(1.5f);
         monsterText.text = "";
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
         //Mother Text line
         motherText.text = "Come on son. Please wake up";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         motherText.text = "";
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
         //Monster Text Line
-        monsterText.text = "Ignore it! Don't listen.";
-        yield return new WaitForSeconds(3);
+        monsterText.text = "She dosen't know whats best for you.";
+        yield return new WaitForSeconds(2f);
         monsterText.text = "";
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
         //Monster Text Line
-        monsterText.text = "You don't have to listen to it.";
-        yield return new WaitForSeconds(3);
+        monsterText.text = "You don't have to listen.";
+        yield return new WaitForSeconds(1.5f);
         monsterText.text = "";
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
         //Monster Text Line
-        monsterText.text = "It doesn't control you";
-        yield return new WaitForSeconds(3);
+        monsterText.text = "I can take care of you";
+        yield return new WaitForSeconds(1.5f);
         monsterText.text = "";
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
         //Mother Text line
-        motherText.text = "Please wake up";
-        yield return new WaitForSeconds(3);
-        motherText.text = "";
+        motherText.text = "Wake up";
         yield return new WaitForSeconds(1);
+        motherText.text = "";
+        yield return new WaitForSeconds(.5f);
 
         //Monster Text Line
         monsterText.text = "No.";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         //Monster Text Line
         monsterText.text = "Don't do it.";
         yield return new WaitForSeconds(1);
         //Monster Text Line
-        monsterText.text = "Don't abondoned me!";
-        yield return new WaitForSeconds(3);
+        monsterText.text = "Don't abondoned me";
+        yield return new WaitForSeconds(1.2f);
+        //Monster Text Line
+        monsterText.text = "Please";
+        yield return new WaitForSeconds(1);
+
+        //Monster Text Line
+        monsterText.text = "";
+        yield return new WaitForSeconds(1);
+
         //Monster Text Line
         monsterText.text = "Please...";
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         monsterText.text = "";
 
         wakeUpButton.SetActive(true);
@@ -100,55 +108,70 @@ public class Level007TextManager : MonoBehaviour
 
         //Mother Text line
         motherText.text = "H- he's stops breathing";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2f);
         motherText.text = "";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(.5f);
 
         //Mother Text line
         motherText.text = "John. Oh god John, he's stopped breathing";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         motherText.text = "";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(.5f);
 
-        motherText.text = "Do something, you're a doctor aren't you?";
-        yield return new WaitForSeconds(3);
+        motherText.text = "John, Do something!!";
+        yield return new WaitForSeconds(1.5f);
         motherText.text = "";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(.5f);
 
-        fatherText.text = "What should I do?";
-        yield return new WaitForSeconds(3);
+        fatherText.text = "What should I do!?";
+        yield return new WaitForSeconds(1.5f);
         fatherText.text = "";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(.5f);
 
 
         motherText.text = "Anything, Just keep my baby alive";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         motherText.text = "";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(.5f);
 
         fatherText.text = "Let me look at him";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
+        fatherText.text = "";
+        yield return new WaitForSeconds(.5f);
+
+        fatherText.text = "...";
+        yield return new WaitForSeconds(5);
+        fatherText.text = "";
+        yield return new WaitForSeconds(.5f);
+
+        motherText.text = "What is it?";
+        yield return new WaitForSeconds(1.2f);
         motherText.text = "";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(.5f);
+
+        motherText.text = "Joahn what is it?";
+        yield return new WaitForSeconds(1.2f);
+        motherText.text = "";
+        yield return new WaitForSeconds(.5f);
 
         fatherText.text = "...H-He's gone";
-        yield return new WaitForSeconds(3);
-        motherText.text = "";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
+        fatherText.text = "";
+        yield return new WaitForSeconds(.5f);
 
         //Monster Text Line
         monsterText.text = "Let's go back home. My darling child.";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         //Monster Text Line
         monsterText.text = "Now we can finally be togther.";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
 
         //Monster Text Line
         monsterText.text = "Forever.";
         yield return new WaitForSeconds(3);
         monsterText.text = "";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene("Credits");
     }
@@ -166,37 +189,40 @@ public class Level007TextManager : MonoBehaviour
         stayButton.SetActive(false);
 
         //Monster Text Line
-        monsterText.text = "Why would you leave me? I thought we were firends.";
-        yield return new WaitForSeconds(3);
+        monsterText.text = "Why would you leave me? I you liked me.";
+        yield return new WaitForSeconds(2);
+
+        //Monster Text Line
+        monsterText.text = "I guess just didn't want to be alone...";
+        yield return new WaitForSeconds(2);
 
         //Monster Text Line
         monsterText.text = "Fine.";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
 
         //Monster Text Line
         monsterText.text = "Just-";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
 
         //Monster Text Line
         monsterText.text = "Just go.";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
 
         //Monster Text Line
         monsterText.text = "I will just stay here.";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         //Monster Text Line
         monsterText.text = "Alone.";
-        yield return new WaitForSeconds(3);
-
+        yield return new WaitForSeconds(1);
 
         //Monster Text Line
         monsterText.text = "For eternity";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
 
         //Monster Text Line
         monsterText.text = "Fairwell child.";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

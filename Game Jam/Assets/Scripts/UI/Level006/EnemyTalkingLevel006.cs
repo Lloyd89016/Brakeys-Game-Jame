@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class EnemyTalkingLevel006 : MonoBehaviour
 {
     public Text text;
+    public Canvas canvas;
 
     private void Awake()
     {
@@ -17,6 +18,8 @@ public class EnemyTalkingLevel006 : MonoBehaviour
     void Start()
     {
         text = GameObject.Find("EnemyText").GetComponent<Text>();
+        canvas.renderMode = RenderMode.ScreenSpaceCamera;
+        canvas.worldCamera = Camera.main;
         StartCoroutine(enemyTalk());
     }
 
@@ -30,6 +33,7 @@ public class EnemyTalkingLevel006 : MonoBehaviour
 
     IEnumerator enemyTalk()
     {
+        yield return new WaitForSeconds(.1f);
         //New line
         text.text = "What are you doing here?";
         yield return new WaitForSeconds(3);
@@ -43,73 +47,79 @@ public class EnemyTalkingLevel006 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "You shouldn't be meanding around";
+        text.text = "You shouldn't be walking around";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Well, best wishes of getting out of here";
+        text.text = "Please child. Just come back home";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Or. You could just go back to sleeping";
-        yield return new WaitForSeconds(3);
-        text.text = "";
-        yield return new WaitForSeconds(10);
-
-        //New line
-        text.text = "You're doing a bad job";
+        text.text = "You won't get to whereever your going";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Just so we're all clear on that.";
-        yield return new WaitForSeconds(3);
-        text.text = "";
-        yield return new WaitForSeconds(10);
-
-        //New line
-        text.text = "Have you given up yet?";
+        text.text = "Think of the life we could have togther";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Because I can garentee that you will never be able to get to the exit.";
+        text.text = "Nither of us would ever be alone again";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "If there even is one";
+        text.text = "Please child. Do not go up there";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "In this existance there is nothing that is not seen";
+        text.text = "We will play games every night before i put you to sleep with a story";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "So at the moment you're trying to get to something that doesn't exist";
+        text.text = "Just like she did.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Rather sad if you ask me";
+        text.text = "You don't really want whats at the top.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "What's even worse is that your'e not even doing a good job of it";
+        text.text = "That world...";
+        yield return new WaitForSeconds(3);
+        text.text = "";
+        yield return new WaitForSeconds(3);
+
+        //New line
+        text.text = "Its horrible";
+        yield return new WaitForSeconds(3);
+        text.text = "";
+        yield return new WaitForSeconds(3);
+
+        //New line
+        text.text = "Just come back home.";
+        yield return new WaitForSeconds(3);
+        text.text = "";
+        yield return new WaitForSeconds(3);
+
+        //New line
+        text.text = "Please";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
