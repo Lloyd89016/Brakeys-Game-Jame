@@ -189,12 +189,12 @@ public class Level007TextManager : MonoBehaviour
         stayButton.SetActive(false);
 
         //Monster Text Line
-        monsterText.text = "Why would you leave me? I you liked me.";
-        yield return new WaitForSeconds(2);
+        monsterText.text = "Why would you leave me? I thought you liked me.";
+        yield return new WaitForSeconds(3);
 
         //Monster Text Line
         monsterText.text = "I guess just didn't want to be alone...";
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
 
         //Monster Text Line
         monsterText.text = "Fine.";
@@ -223,6 +223,9 @@ public class Level007TextManager : MonoBehaviour
         //Monster Text Line
         monsterText.text = "Fairwell child.";
         yield return new WaitForSeconds(2);
+
+        monsterText.text = "";
+        yield return new WaitForSeconds(3);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
