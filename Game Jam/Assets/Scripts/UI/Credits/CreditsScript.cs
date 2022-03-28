@@ -18,7 +18,7 @@ public class CreditsScript : MonoBehaviour
         yield return new WaitForSeconds(.5f);
 
 
-        creditsText.text = "Eveything by lloyd";
+        creditsText.text = "We need to decide on how to do this so right now pretend your seeing credits";
         yield return new WaitForSeconds(5f);
 
 

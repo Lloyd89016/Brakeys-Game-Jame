@@ -41,10 +41,10 @@ public class startCutScene001 : MonoBehaviour
         //Flashes the "Wake Up" Text
         yield return new WaitForSeconds(2f);
 
-        wakeUpText.text = "Hello there child!";
+        wakeUpText.text = "Hello there, child.";
         yield return new WaitForSeconds(1.4f);
 
-        wakeUpText.text = "You seem to be lost";
+        wakeUpText.text = "You seem to be lost.";
         yield return new WaitForSeconds(1.4f);
 
         wakeUpText.text = "And afraid.";
@@ -53,13 +53,13 @@ public class startCutScene001 : MonoBehaviour
         wakeUpText.text = "And stuck in a hole.";
         yield return new WaitForSeconds(1.4f);
 
-        wakeUpText.text = "Don't worry";
+        wakeUpText.text = "Don't worry.";
         yield return new WaitForSeconds(1f);
 
-        wakeUpText.text = "I'll take you in";
+        wakeUpText.text = "I'll take you in.";
         yield return new WaitForSeconds(1.4f);
 
-        wakeUpText.text = "Let me bring you to my dewlling";
+        wakeUpText.text = "Let me bring you to my dwelling.";
         yield return new WaitForSeconds(2f);
 
         wakeUpText.text = "";

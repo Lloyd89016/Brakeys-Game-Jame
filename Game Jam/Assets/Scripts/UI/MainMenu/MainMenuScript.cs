@@ -26,13 +26,13 @@ public class MainMenuScript : MonoBehaviour
     {
         Destroy(buttonsCanvas);
         loadCanvas.SetActive(true);
-        text.text = "They wander through the caves and corridors of the mind, fearing nothing but a ray of light shining upon their dark figure. Casting them away from this plane of existance.";
+        text.text = "They wander through the caves and corridors of the mind, fearing nothing but a ray of light shining upon their dark figure. Casting them away from this plane of existence.";
         yield return new WaitForSeconds(7);
 
-        text.text = "Oh look at the time!";
+        text.text = "Oh, look at the time!";
         yield return new WaitForSeconds(2);
 
-        text.text = "Its time for you to go to bed. We can keep reading tomorow night";
+        text.text = "It's time for you to go to bed! We can keep reading tomorrow night.";
         yield return new WaitForSeconds(4);
 
         text.text = "Goodnight son";

@@ -34,13 +34,13 @@ public class destoryLevel003Enemy : MonoBehaviour
         //Freezes the player
         player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         player.GetComponent<PlayerMovmentScript>().enabled = false;
-        enemyText.text = "Its crazy what the human mid is cabable of.";
+        enemyText.text = "It's crazy what the human mind is cabable of.";
         yield return new WaitForSeconds(2.2f);
 
-        enemyText.text = "Seeing figures where there is really nothing";
+        enemyText.text = "Seeing figures where there is really nothing.";
         yield return new WaitForSeconds(2.2f);
 
-        enemyText.text = "Fasinating isen't it";
+        enemyText.text = "Fascinating isn't it.";
         yield return new WaitForSeconds(1.7f);
 
         enemyText.text = "";
@@ -50,7 +50,7 @@ public class destoryLevel003Enemy : MonoBehaviour
 
         yield return new WaitForSeconds(15);
 
-        enemyText.text = "Are you just goint to sit inside all day?";
+        enemyText.text = "Are you just going to sit inside all day?";
         yield return new WaitForSeconds(2.5f);
 
         enemyText.text = "";

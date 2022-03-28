@@ -41,50 +41,50 @@ public class EnemyTalkingLevel006 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "You went to bed";
+        text.text = "You went to bed.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "You shouldn't be walking around";
+        text.text = "You shouldn't be walking around.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Please child. Just come back home";
+        text.text = "Please child. Just come back home.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "You won't get to whereever your going";
+        text.text = "You won't get to wherever you're going.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Think of the life we could have togther";
+        text.text = "Think of the life we could have together.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Nither of us would ever be alone again";
+        text.text = "Neither of us would ever be alone again.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Please child. Do not go up there";
+        text.text = "Please child. Do not go up there.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "We will play games every night before i put you to sleep with a story";
-        yield return new WaitForSeconds(3);
+        text.text = "We will play games every night before I put you to sleep with a story.";
+        yield return new WaitForSeconds(5);
         text.text = "";
         yield return new WaitForSeconds(3);
 
@@ -95,7 +95,7 @@ public class EnemyTalkingLevel006 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "You don't really want whats at the top.";
+        text.text = "You don't really want what's at the top.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
@@ -107,7 +107,7 @@ public class EnemyTalkingLevel006 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Its horrible";
+        text.text = "It's horrible.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);
@@ -119,7 +119,7 @@ public class EnemyTalkingLevel006 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         //New line
-        text.text = "Please";
+        text.text = "Please.";
         yield return new WaitForSeconds(3);
         text.text = "";
         yield return new WaitForSeconds(3);

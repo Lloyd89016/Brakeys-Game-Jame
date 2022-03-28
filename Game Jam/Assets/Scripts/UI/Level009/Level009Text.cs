@@ -40,8 +40,12 @@ public class Level009Text : MonoBehaviour
 
         motherText.text = "Good Morning son.";
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
 
+        motherText.text = "That must have been quite a dream you were having!";
+
+        yield return new WaitForSeconds(2f);
+        
         motherText.text = "";
 
         yield return new WaitForSeconds(4f);

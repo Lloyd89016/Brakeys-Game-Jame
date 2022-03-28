@@ -29,10 +29,10 @@ public class Level005Text : MonoBehaviour
         enemyText.text = "How was it?";
         yield return new WaitForSeconds(1.2f);
 
-        enemyText.text = "Fun im sure.";
+        enemyText.text = "Fun I'm sure.";
         yield return new WaitForSeconds(1.2f);
 
-        enemyText.text = "Now I think its time for bed.";
+        enemyText.text = "Now I think it's time for bed.";
         yield return new WaitForSeconds(2);
 
         enemyText.text = "Don't you?";

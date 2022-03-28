@@ -571,6 +571,79 @@ Transform:
   m_Father: {fileID: 1801510988}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &572592311
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2544368570447676852, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_Size.y
+      value: 25.502869
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676852, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_Offset.y
+      value: -12.248566
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676873, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_Name
+      value: Thinkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676874, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544368570447676875, guid: d6502d370e22905459b8b9c38791afac, type: 3}
+      propertyPath: whatToSayOrThink
+      value: I should try pressing WASD and Shift.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6502d370e22905459b8b9c38791afac, type: 3}
 --- !u!1 &684636711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,7 +2181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627695945893856710, guid: d571977a6a8c2f44a98534a5cb1884df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4627695946834502225, guid: d571977a6a8c2f44a98534a5cb1884df, type: 3}
       propertyPath: m_Name
