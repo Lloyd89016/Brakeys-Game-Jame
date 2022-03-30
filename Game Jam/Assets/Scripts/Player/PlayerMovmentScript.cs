@@ -13,17 +13,17 @@ public class PlayerMovmentScript : MonoBehaviour
     public float maxSpeed = 3.4f;
     public float jumpHeight = 6.5f;
     public float gravityScale = 1.5f;
-    public bool canWalk;
-    Rigidbody2D r2d;
-    bool facingRight = true;
-    float moveDirection = 0;
-    public bool isGrounded = false;
-    public bool hasStartedJump = false;
+    private bool canWalk;
+    private Rigidbody2D r2d;
+    private bool facingRight = true;
+    private float moveDirection = 0;
+    private bool isGrounded = false;
+    private bool hasStartedJump = false;
     Animator animator;
     RigidbodyConstraints2D originalConstraints;
     public LayerMask groundLayerMask;
     public GameObject groundChecker;
-    bool isJumping;
+    private bool isJumping;
 
     //Text
     public float dialogueClearTime = 3f;
@@ -34,6 +34,15 @@ public class PlayerMovmentScript : MonoBehaviour
     public Light2D globalLight;
     public float globalLightatStartValue = 0.05f;
 
+    //Sound Stuff
+    public AudioSource WalkingAudioSource;
+    public AudioSource JumpingAudioSource;
+    public AudioSource LandingAudioSource;
+
+    public AudioClip[] walkingSounds;
+    public AudioClip[] JumpingSounds;
+    public AudioClip[] LandingSounds;
+
     private void Awake()
     {
         //Sets the animator component
@@ -41,8 +50,17 @@ public class PlayerMovmentScript : MonoBehaviour
         globalLight.intensity = globalLightatStartValue; // makes life of developers easier...
     }
 
-    // Use this for initialization
+
     void Start()
+    {
+
+        setVariables();
+        //Starts the corountine that playes random animations
+        StartCoroutine(randomAnimations());
+        StartCoroutine(playerWalkingSounds());
+    }
+
+    void setVariables()
     {
         //lets the player walk
         canWalk = true;
@@ -71,14 +89,20 @@ public class PlayerMovmentScript : MonoBehaviour
         //Is the player on the ground?
         isGrounded = false;
 
-        //Starts the corountine that playes random animations
-        StartCoroutine(randomAnimations());
+        //Sound
+        
     }
 
     void Update()
     {
+        movement();
+    }
+
+    void movement()
+    {
+
         // Movement controls
-        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift) && isGrounded == true || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && isGrounded == true)
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift) && isGrounded == true || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && isGrounded == true)
         {
             animator.SetFloat("Speed", 2);
             moveDirection = Input.GetKey(KeyCode.A) ? -1.5f : 1.5f;
@@ -112,7 +136,7 @@ public class PlayerMovmentScript : MonoBehaviour
             animator.SetBool("isFloating", false);
         }
 
-        if(canWalk == true)
+        if (canWalk == true)
         {
             // Change facing direction
             if (moveDirection != 0)
@@ -138,6 +162,8 @@ public class PlayerMovmentScript : MonoBehaviour
             //Jump
             if (canWalk == true)
             {
+                JumpingAudioSource.clip = JumpingSounds[Random.Range(0, JumpingSounds.Length)];
+                JumpingAudioSource.Play();
                 r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
             }
         }
@@ -145,7 +171,7 @@ public class PlayerMovmentScript : MonoBehaviour
         if (isJumping == true)
         {
             //If the player is jumping and isent playing the floating animation then it will play the jumping animation
-            if(animator.GetBool("isFloating") == false)
+            if (animator.GetBool("isFloating") == false)
             {
                 animator.SetBool("isJumping", true);
             }
@@ -173,6 +199,9 @@ public class PlayerMovmentScript : MonoBehaviour
             //Sets the "hasStartedJump" variable to true so that this if statment cant call again untill the player has landed
             hasStartedJump = true;
         }
+
+        //Checks if the player is touching the ground by puting a circle at its feet and seeing if anything is touching that. Then it looks for the layer the circle it touching. If it has the ground layer the yeipee its touching the ground. Lovley.
+        isGrounded = Physics2D.OverlapCircle(groundChecker.transform.position, 0.2f, groundLayerMask);
     }
 
     IEnumerator Land()
@@ -182,6 +211,9 @@ public class PlayerMovmentScript : MonoBehaviour
 
         //starts the land animation
         animator.SetBool("hasLanded", true);
+
+        LandingAudioSource.clip = LandingSounds[Random.Range(0, LandingSounds.Length)];
+        LandingAudioSource.Play();
 
         //Makes the player not abke to walk
         canWalk = false;
@@ -234,7 +266,7 @@ public class PlayerMovmentScript : MonoBehaviour
     {
         float waitTime = Random.Range(1, 30);
         yield return new WaitForSeconds(waitTime);
-        if (Input.anyKey == false  && isGrounded == true)
+        if (Input.anyKey == false && isGrounded == true)
         {
             animator.SetInteger("RandomAnimation", 1);
         }
@@ -252,11 +284,34 @@ public class PlayerMovmentScript : MonoBehaviour
         StartCoroutine(randomAnimations());
     }
 
+    IEnumerator playerWalkingSounds()
+    {
+        float WaitTime = .2f;
+        yield return new WaitForSeconds(.0001f);
+        if (moveDirection == 1.5f && isGrounded == true || moveDirection == -1.5f && isGrounded == true)
+        {
+            WaitTime = .15f;
+            WalkingAudioSource.clip = walkingSounds[Random.Range(0, walkingSounds.Length)];
+            WalkingAudioSource.Play();
+        }
+        else if(moveDirection != 0 && isGrounded == true)
+        {
+            WaitTime = .3f;
+            WalkingAudioSource.clip = walkingSounds[Random.Range(0, walkingSounds.Length)];
+            WalkingAudioSource.Play();
+        }
+        else
+        {
+            WalkingAudioSource.Stop();
+            WaitTime = .001f;
+        }
+
+        yield return new WaitForSeconds(WaitTime);
+        StartCoroutine(playerWalkingSounds());
+    }
+
     void FixedUpdate()
     {
-        //Checks if the player is touching the ground by puting a circle at its feet and seeing if anything is touching that. Then it looks for the layer the circle it touching. If it has the ground layer the yeipee its touching the ground. Lovley.
-        isGrounded = Physics2D.OverlapCircle(groundChecker.transform.position, 0.2f, groundLayerMask);
-
         //Moves if the "canWalk" is true. The only reason it wouldent be is if the player just landed.
         if(canWalk == true)
         {
