@@ -173,7 +173,7 @@ public class Level007TextManager : MonoBehaviour
         monsterText.text = "";
         yield return new WaitForSeconds(6f);
 
-        SceneManager.LoadScene("Credits");
+        Application.Quit();
     }
 
 

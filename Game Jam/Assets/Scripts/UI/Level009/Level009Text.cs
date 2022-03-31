@@ -32,24 +32,6 @@ public class Level009Text : MonoBehaviour
 
         yield return new WaitForSeconds(.1f);
 
-        light2D.intensity = 0;
-        effect.SetActive(false);
-        image001.SetActive(false);
-        image002.SetActive(true);
-        Birds.Play();
-
-        motherText.text = "Good Morning son.";
-
-        yield return new WaitForSeconds(2f);
-
-        motherText.text = "That must have been quite a dream you were having!";
-
-        yield return new WaitForSeconds(2f);
-        
-        motherText.text = "";
-
-        yield return new WaitForSeconds(4f);
-
-        SceneManager.LoadScene("Credits");
+        Application.Quit();
     }
 }

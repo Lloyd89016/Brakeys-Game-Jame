@@ -10,6 +10,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject buttonsCanvas;
     public Text text;
     public GameObject loadCanvas;
+    public AudioSource clothSound;
 
     private void Start()
     {
@@ -39,6 +40,8 @@ public class MainMenuScript : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         text.text = "";
+        yield return new WaitForSeconds(1);
+        clothSound.Play();
         yield return new WaitForSeconds(10);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
